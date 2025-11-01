@@ -1,0 +1,118 @@
+import { X, ExternalLink, Github } from 'lucide-react';
+import type { Project } from '../../types';
+import Button from './Button';
+
+interface ProjectModalProps {
+  project: Project | null;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  if (!isOpen || !project) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors"
+          aria-label="Close modal"
+        >
+          <X className="w-6 h-6 text-neutral-700" />
+        </button>
+
+        {/* Project Image */}
+        <div className="relative h-64 bg-gradient-to-br from-primary-400 to-secondary-500">
+          {project.imageUrl ? (
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <div className="text-8xl font-bold text-white opacity-30">
+                {project.title.charAt(0)}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Project Content */}
+        <div className="p-8">
+          <h2 className="text-3xl font-bold text-neutral-900 mb-2">{project.title}</h2>
+          
+          <p className="text-lg text-neutral-600 mb-6">{project.description}</p>
+
+          {/* Problem & Solution */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 className="font-semibold text-neutral-900 mb-2">Problem</h3>
+              <p className="text-neutral-600 text-sm">{project.problem}</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-neutral-900 mb-2">Solution</h3>
+              <p className="text-neutral-600 text-sm">{project.solution}</p>
+            </div>
+          </div>
+
+          {/* Technologies */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-neutral-900 mb-3">Technologies Used</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 text-sm font-medium bg-primary-100 text-primary-700 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-neutral-900 mb-3">Key Features</h3>
+            <ul className="space-y-2">
+              {project.features.map((feature, index) => (
+                <li key={index} className="text-neutral-600 flex items-start gap-2">
+                  <span className="text-primary-600 mt-1">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex gap-4 pt-4 border-t border-neutral-200">
+            {project.liveUrl && (
+              <Button variant="primary" href={project.liveUrl} className="flex-1">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                View Live Demo
+              </Button>
+            )}
+            {project.githubUrl && (
+              <Button variant="outline" href={project.githubUrl} className="flex-1">
+                <Github className="w-4 h-4 mr-2" />
+                View on GitHub
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+

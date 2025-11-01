@@ -1,4 +1,5 @@
 import { Code, Coffee, Gamepad2, Music } from 'lucide-react';
+import ScrollFadeIn from '../common/ScrollFadeIn';
 
 export default function About() {
   return (
@@ -14,7 +15,8 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Image */}
-          <div className="order-2 lg:order-1">
+          <ScrollFadeIn delay={100}>
+            <div className="order-2 lg:order-1">
             <div className="relative">
               {/* Professional Photo Placeholder */}
               <div className="relative w-full max-w-md mx-auto">
@@ -31,9 +33,11 @@ export default function About() {
               </div>
             </div>
           </div>
+          </ScrollFadeIn>
 
           {/* Right Column - Content */}
-          <div className="order-1 lg:order-2 space-y-8">
+          <ScrollFadeIn delay={200}>
+            <div className="order-1 lg:order-2 space-y-8">
             {/* Professional Background */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-neutral-900">Professional Journey</h3>
@@ -108,6 +112,7 @@ export default function About() {
               </div>
             </div>
           </div>
+          </ScrollFadeIn>
         </div>
       </div>
     </section>

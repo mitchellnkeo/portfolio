@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { projects } from '../../data/projects';
 import ProjectCard from '../common/ProjectCard';
+import ProjectModal from '../common/ProjectModal';
 import type { Project } from '../../types';
 
 type FilterType = 'all' | 'fullstack' | 'frontend' | 'backend';
 
 export default function Projects() {
   const [filter, setFilter] = useState<FilterType>('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Categorize projects (simple heuristic based on technologies)
   const categorizeProject = (project: Project): FilterType => {
@@ -66,7 +68,11 @@ export default function Projects() {
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onImageClick={() => setSelectedProject(project)}
+              />
             ))}
           </div>
         ) : (
@@ -74,6 +80,13 @@ export default function Projects() {
             <p className="text-neutral-600 text-lg">No projects found in this category.</p>
           </div>
         )}
+
+        {/* Project Modal */}
+        <ProjectModal
+          project={selectedProject}
+          isOpen={selectedProject !== null}
+          onClose={() => setSelectedProject(null)}
+        />
 
         {/* View More (Optional) */}
         <div className="text-center mt-12">

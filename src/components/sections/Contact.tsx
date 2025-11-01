@@ -1,12 +1,6 @@
 import { Mail, Linkedin, Github, MapPin, Send } from 'lucide-react';
 import { socialLinks } from '../../data/socialLinks';
 
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  mail: Mail,
-};
-
 export default function Contact() {
   const emailLink = socialLinks.find(link => link.icon === 'mail');
   const githubLink = socialLinks.find(link => link.icon === 'github');

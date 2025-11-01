@@ -1,16 +1,17 @@
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Maximize2 } from 'lucide-react';
 import type { Project } from '../../types';
 import Button from './Button';
 
 interface ProjectCardProps {
   project: Project;
+  onImageClick?: () => void;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
   return (
     <div className="group bg-white rounded-xl border-2 border-neutral-200 overflow-hidden hover:border-primary-500 transition-all duration-300 hover:shadow-2xl">
       {/* Project Image */}
-      <div className="relative h-48 bg-gradient-to-br from-primary-400 to-secondary-500 overflow-hidden">
+      <div className="relative h-48 bg-gradient-to-br from-primary-400 to-secondary-500 overflow-hidden cursor-pointer" onClick={onImageClick}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-6xl font-bold text-white opacity-30">
             {project.title.charAt(0)}
@@ -29,11 +30,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-primary-600 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center gap-4">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onImageClick?.();
+            }}
+            className="p-3 bg-white rounded-full hover:scale-110 transition-transform"
+            aria-label={`View ${project.title} details`}
+          >
+            <Maximize2 className="w-6 h-6 text-primary-600" />
+          </button>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="p-3 bg-white rounded-full hover:scale-110 transition-transform"
               aria-label={`View ${project.title} live demo`}
             >
@@ -45,6 +57,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="p-3 bg-white rounded-full hover:scale-110 transition-transform"
               aria-label={`View ${project.title} on GitHub`}
             >
