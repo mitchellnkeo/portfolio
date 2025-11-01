@@ -19,19 +19,31 @@ export default function Navigation() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100; // Offset for header
 
+      // Find the first section that exists and is in view
       for (let i = navSections.length - 1; i >= 0; i--) {
         const section = document.getElementById(navSections[i].id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navSections[i].id);
-          break;
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (sectionTop <= scrollPosition && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(navSections[i].id);
+            break;
+          }
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    // Wait for DOM to be ready
+    const timeoutId = setTimeout(() => {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll(); // Initial check
+    }, 200);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
