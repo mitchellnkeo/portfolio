@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main>
+      <main className="pt-16">
         {/* Sections will be added here */}
       </main>
       <Footer />

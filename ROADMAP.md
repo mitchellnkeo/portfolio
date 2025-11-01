@@ -11,12 +11,12 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - [x] Create base layout structure (Header, Footer, Navigation components)
 
 ## Phase 2: Layout & Navigation
-- [ ] Build Header component with logo/name
-- [ ] Build Navigation component with smooth scroll links
-- [ ] Implement responsive mobile menu
-- [ ] Build Footer component with social links
-- [ ] Add sticky navigation on scroll
-- [ ] Implement active section highlighting in navigation
+- [x] Build Header component with logo/name
+- [x] Build Navigation component with smooth scroll links
+- [x] Implement responsive mobile menu
+- [x] Build Footer component with social links
+- [x] Add sticky navigation on scroll
+- [x] Implement active section highlighting in navigation
 
 ## Phase 3: Hero Section
 - [ ] Create Hero component structure
@@ -172,6 +172,6 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - Always test responsive design as you build each component
 
 ## Current Status
-**Last Updated**: Phase 1 Complete
-**Current Phase**: Ready for Phase 2
+**Last Updated**: Phase 2 Complete
+**Current Phase**: Ready for Phase 3
 
