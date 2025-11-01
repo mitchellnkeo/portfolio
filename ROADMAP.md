@@ -33,7 +33,7 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - [x] Write and format professional background content
 - [x] Add current role and focus areas
 - [x] Include personal interests/hobbies section
-- [x] Add professional photo placeholder
+- [x] Add professional photo plagiceholder
 - [x] Make About section fully responsive
 
 ## Phase 5: Skills/Technologies Section
@@ -61,15 +61,15 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - [x] Make Projects section fully responsive
 
 ## Phase 7: Experience Section
-- [ ] Create Experience component structure
-- [ ] Define experience data structure (types/index.ts)
-- [ ] Create experience data file (data/experience.ts)
-- [ ] Add work history entries with company names
-- [ ] Add job titles and employment dates
-- [ ] Add key responsibilities and achievements
-- [ ] Add education background
-- [ ] Style experience timeline/cards
-- [ ] Make Experience section fully responsive
+- [x] Create Experience component structure
+- [x] Define experience data structure (types/index.ts)
+- [x] Create experience data file (data/experience.ts)
+- [x] Add work history entries with company names
+- [x] Add job titles and employment dates
+- [x] Add key responsibilities and achievements
+- [x] Add education background
+- [x] Style experience timeline/cards
+- [x] Make Experience section fully responsive
 
 ## Phase 8: Contact Section
 - [ ] Create Contact component structure
@@ -172,6 +172,6 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - Always test responsive design as you build each component
 
 ## Current Status
-**Last Updated**: Phase 6 Complete
-**Current Phase**: Ready for Phase 7
+**Last Updated**: Phase 7 Complete
+**Current Phase**: Ready for Phase 8
 
