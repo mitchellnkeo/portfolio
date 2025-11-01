@@ -2,6 +2,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
+import Skills from './components/sections/Skills';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
         {/* More sections will be added here */}
       </main>
       <Footer />
