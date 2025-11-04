@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mitchellkeo.dev/sitemap.xml
+

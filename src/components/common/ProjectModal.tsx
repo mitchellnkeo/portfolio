@@ -36,6 +36,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               src={project.imageUrl}
               alt={project.title}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}

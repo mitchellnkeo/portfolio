@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { projects } from '../../data/projects';
 import ProjectCard from '../common/ProjectCard';
 import ProjectModal from '../common/ProjectModal';
@@ -6,7 +6,7 @@ import type { Project } from '../../types';
 
 type FilterType = 'all' | 'fullstack' | 'frontend' | 'backend';
 
-export default function Projects() {
+function Projects() {
   const [filter, setFilter] = useState<FilterType>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -106,4 +106,6 @@ export default function Projects() {
     </section>
   );
 }
+
+export default memo(Projects);
 

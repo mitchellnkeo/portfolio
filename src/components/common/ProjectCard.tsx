@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { ExternalLink, Github, ArrowRight, Maximize2 } from 'lucide-react';
 import type { Project } from '../../types';
 import Button from './Button';
@@ -7,7 +8,7 @@ interface ProjectCardProps {
   onImageClick?: () => void;
 }
 
-export default function ProjectCard({ project, onImageClick }: ProjectCardProps) {
+function ProjectCard({ project, onImageClick }: ProjectCardProps) {
   return (
     <div className="group bg-white rounded-xl border-2 border-neutral-200 overflow-hidden hover:border-primary-500 transition-all duration-300 hover:shadow-2xl">
       {/* Project Image */}
@@ -22,6 +23,8 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
             src={project.imageUrl}
             alt={project.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+            decoding="async"
             onError={(e) => {
               // Fallback to placeholder if image fails to load
               e.currentTarget.style.display = 'none';
@@ -133,4 +136,6 @@ export default function ProjectCard({ project, onImageClick }: ProjectCardProps)
     </div>
   );
 }
+
+export default memo(ProjectCard);
 
