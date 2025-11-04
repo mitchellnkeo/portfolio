@@ -34,15 +34,15 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 sm:py-24 lg:py-32 bg-neutral-50">
+    <section id="projects" className="py-20 sm:py-24 lg:py-32 bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
             A collection of projects showcasing my skills and experience in software development
           </p>
         </div>
@@ -56,7 +56,7 @@ function Projects() {
               className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
                 filter === filterOption.value
                   ? 'bg-primary-600 text-white shadow-lg'
-                  : 'bg-white text-neutral-700 hover:bg-primary-50 border-2 border-neutral-200'
+                  : 'bg-neutral-800 text-neutral-200 hover:bg-neutral-700 border-2 border-neutral-700'
               }`}
             >
               {filterOption.label}
@@ -77,7 +77,7 @@ function Projects() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-neutral-600 text-lg">No projects found in this category.</p>
+            <p className="text-neutral-300 text-lg">No projects found in this category.</p>
           </div>
         )}
 
@@ -90,13 +90,13 @@ function Projects() {
 
         {/* View More (Optional) */}
         <div className="text-center mt-12">
-          <p className="text-neutral-600 mb-4">
+          <p className="text-neutral-300 mb-4">
             Want to see more? Check out my{' '}
             <a
               href="https://github.com/mitchellkeo"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 font-semibold underline"
+              className="text-primary-400 hover:text-primary-300 font-semibold underline"
             >
               GitHub profile
             </a>

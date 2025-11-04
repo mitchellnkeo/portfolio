@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-neutral-50 via-white to-neutral-50 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-neutral-900 via-neutral-800 to-neutral-900 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -23,16 +23,16 @@ export default function Hero() {
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left space-y-6 animate-fade-in">
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-neutral-900 leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
                 Hi, I'm{' '}
-                <span className="text-primary-600">Mitchell Keo</span>
+                <span className="text-primary-400">Mitchell Keo</span>
               </h1>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutral-700">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutral-300">
                 Software Engineer
               </h2>
             </div>
             
-            <p className="text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Building innovative solutions with modern web technologies. 
               Passionate about creating exceptional user experiences and scalable applications.
             </p>
@@ -99,7 +99,7 @@ export default function Hero() {
         <div className="mt-16 flex justify-center animate-bounce">
           <button
             onClick={() => handleScroll('about')}
-            className="text-neutral-400 hover:text-primary-600 transition-colors"
+            className="text-neutral-400 hover:text-primary-400 transition-colors"
             aria-label="Scroll to about section"
           >
             <ArrowDown className="w-6 h-6" />
