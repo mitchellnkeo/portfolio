@@ -145,13 +145,13 @@ This roadmap breaks down the portfolio development into small, incremental steps
 - [ ] Ensure consistent spacing and typography
 
 ## Phase 15: Deployment Preparation
-- [ ] Create production build and test locally
-- [ ] Verify all environment variables are set
-- [ ] Prepare deployment documentation
-- [ ] Set up Vercel/Netlify project
+- [X] Create production build and test locally
+- [X] Verify all environment variables are set
+- [X] Prepare deployment documentation
+- [X] Set up Vercel/Netlify project
 - [ ] Configure custom domain (mitchellkeo.dev)
-- [ ] Set up automatic deployments
-- [ ] Test deployed site
+- [X] Set up automatic deployments
+- [X] Test deployed site
 
 ## Phase 16: Post-Deployment
 - [ ] Set up Google Analytics 4
