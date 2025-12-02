@@ -1,6 +1,7 @@
-import { Briefcase, GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, MapPin, Award, Heart } from 'lucide-react';
 import { workExperience, education } from '../../data/experience';
-import type { WorkExperience, Education } from '../../types';
+import { volunteeringExperience } from '../../data/volunteering';
+import type { WorkExperience, Education, VolunteeringExperience } from '../../types';
 
 function formatDate(dateString: string): string {
   const date = new Date(dateString + '-01');
@@ -110,20 +111,76 @@ function EducationCard({ edu }: { edu: Education }) {
         </div>
         <div className="flex-1">
           <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-1">{edu.degree}</h3>
-          <p className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{edu.field}</p>
+          {edu.field && (
+            <p className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-2">{edu.field}</p>
+          )}
           <p className="text-base text-neutral-600 dark:text-neutral-300 mb-3">{edu.institution}</p>
-          <div className="flex flex-wrap gap-4 text-sm text-neutral-500 dark:text-neutral-400">
+          <div className="flex flex-wrap gap-4 text-sm text-neutral-500 dark:text-neutral-400 mb-2">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <span>
                 {formatDate(edu.startDate)} - {edu.current ? 'Present' : formatDate(edu.endDate || '')}
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>{edu.location}</span>
-            </div>
+            {edu.location && (
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>{edu.location}</span>
+              </div>
+            )}
           </div>
+          {edu.activities && (
+            <div className="mt-3 pt-3 border-t border-neutral-200 dark:border-neutral-700">
+              <p className="text-sm text-neutral-600 dark:text-neutral-300">
+                <span className="font-semibold">Activities and societies:</span> {edu.activities}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function VolunteeringCard({ volunteering }: { volunteering: VolunteeringExperience }) {
+  return (
+    <div className="relative pl-8 pb-8 border-l-2 border-neutral-300 dark:border-neutral-700 last:border-l-0 last:pb-0 group">
+      {/* Timeline Dot */}
+      <div className="absolute -left-[9px] top-0 w-4 h-4 bg-secondary-600 dark:bg-secondary-400 rounded-full border-4 border-white dark:border-neutral-800 group-hover:scale-125 transition-transform shadow-lg"></div>
+      
+      {/* Card Content */}
+      <div className="bg-white dark:bg-neutral-900 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-neutral-200 dark:border-neutral-700">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+          <div>
+            <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-1">{volunteering.position}</h3>
+            <p className="text-lg font-semibold text-secondary-600 dark:text-secondary-400">{volunteering.organization}</p>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <Calendar className="w-4 h-4" />
+            <span>
+              {formatDate(volunteering.startDate)} - {volunteering.current ? 'Present' : formatDate(volunteering.endDate || '')}
+            </span>
+          </div>
+        </div>
+
+        {/* Location */}
+        <div className="flex items-center gap-2 text-neutral-500 dark:text-neutral-400 mb-4">
+          <MapPin className="w-4 h-4" />
+          <span className="text-sm">{volunteering.location}</span>
+        </div>
+
+        {/* Responsibilities */}
+        <div>
+          <h4 className="font-semibold text-neutral-900 dark:text-white mb-2">Key Responsibilities:</h4>
+          <ul className="space-y-2">
+            {volunteering.responsibilities.map((responsibility, index) => (
+              <li key={index} className="text-neutral-600 dark:text-neutral-300 text-sm flex items-start gap-2">
+                <span className="text-secondary-600 dark:text-secondary-400 mt-1.5">•</span>
+                <span>{responsibility}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
@@ -162,19 +219,38 @@ export default function Experience() {
             </div>
           </div>
 
-          {/* Education */}
+          {/* Education and Volunteering */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-secondary-50 dark:bg-secondary-900/30 rounded-lg border border-secondary-200 dark:border-secondary-800">
-                <GraduationCap className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
+            {/* Education */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-2 bg-secondary-50 dark:bg-secondary-900/30 rounded-lg border border-secondary-200 dark:border-secondary-800">
+                  <GraduationCap className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Education</h3>
               </div>
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Education</h3>
+
+              <div className="space-y-6 mb-12">
+                {education.map((edu) => (
+                  <EducationCard key={edu.id} edu={edu} />
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-6">
-              {education.map((edu) => (
-                <EducationCard key={edu.id} edu={edu} />
-              ))}
+            {/* Volunteering Experience */}
+            <div className="mt-12">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-2 bg-secondary-50 dark:bg-secondary-900/30 rounded-lg border border-secondary-200 dark:border-secondary-800">
+                  <Heart className="w-6 h-6 text-secondary-600 dark:text-secondary-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Volunteering Experience</h3>
+              </div>
+
+              <div className="relative">
+                {volunteeringExperience.map((volunteering) => (
+                  <VolunteeringCard key={volunteering.id} volunteering={volunteering} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

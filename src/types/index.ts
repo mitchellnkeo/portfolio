@@ -41,6 +41,18 @@ export interface Education {
   endDate?: string;
   current: boolean;
   location: string;
+  activities?: string;
+}
+
+export interface VolunteeringExperience {
+  id: string;
+  organization: string;
+  position: string;
+  startDate: string;
+  endDate?: string;
+  current: boolean;
+  location: string;
+  responsibilities: string[];
 }
 
 // Contact types
