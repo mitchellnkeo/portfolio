@@ -1,5 +1,5 @@
 import { Code, Database, Cloud, Settings } from 'lucide-react';
-import { skills, categoryLabels, proficiencyColors } from '../../data/skills';
+import { skills, categoryLabels } from '../../data/skills';
 import type { Skill } from '../../types';
 
 const categoryIcons = {
@@ -65,29 +65,7 @@ export default function Skills() {
                     >
                       {/* Skill Name */}
                       <div className="text-center">
-                        <p className="font-semibold text-neutral-900 dark:text-white mb-2">{skill.name}</p>
-                        
-                        {/* Proficiency Indicator */}
-                        {skill.proficiency && (
-                          <div className="flex items-center justify-center gap-2">
-                            <div className="flex gap-1">
-                              {['beginner', 'intermediate', 'advanced', 'expert'].map((level, index) => {
-                                const currentLevelIndex = ['beginner', 'intermediate', 'advanced', 'expert'].indexOf(skill.proficiency || 'beginner');
-                                const isActive = index <= currentLevelIndex;
-                                return (
-                                  <div
-                                    key={level}
-                                    className={`w-2 h-2 rounded-full transition-colors ${
-                                      isActive
-                                        ? proficiencyColors[skill.proficiency as NonNullable<Skill['proficiency']>]
-                                        : 'bg-neutral-300'
-                                    }`}
-                                  />
-                                );
-                              })}
-                            </div>
-                          </div>
-                        )}
+                        <p className="font-semibold text-neutral-900 dark:text-white">{skill.name}</p>
                       </div>
 
                       {/* Hover Effect */}
@@ -98,49 +76,6 @@ export default function Skills() {
               </div>
             );
           })}
-        </div>
-
-        {/* Legend */}
-        <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-700">
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <span className="font-semibold text-neutral-700 dark:text-neutral-300">Proficiency:</span>
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
-                <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
-                <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
-                <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
-              </div>
-              <span className="text-neutral-600 dark:text-neutral-400">Beginner</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-primary-300"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-300"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-300"></div>
-                <div className="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600"></div>
-              </div>
-              <span className="text-neutral-600 dark:text-neutral-400">Intermediate</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-primary-500"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-500"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-500"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-500"></div>
-              </div>
-              <span className="text-neutral-600 dark:text-neutral-400">Advanced</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-primary-700"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-700"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-700"></div>
-                <div className="w-2 h-2 rounded-full bg-primary-700"></div>
-              </div>
-              <span className="text-neutral-600 dark:text-neutral-400">Expert</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
