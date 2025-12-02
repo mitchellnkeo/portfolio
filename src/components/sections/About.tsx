@@ -1,5 +1,8 @@
 import { Code, Coffee, Gamepad2, Music } from 'lucide-react';
 import ScrollFadeIn from '../common/ScrollFadeIn';
+import servicePicture from '../../assets/images/Service_Picture.jpg';
+import mentoringImage from '../../assets/images/Mentoring.JPG';
+import bookClubImage from '../../assets/images/BookClubMeeting.jpeg';
 
 export default function About() {
   return (
@@ -43,15 +46,71 @@ export default function About() {
               <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Professional Journey</h3>
               <div className="space-y-3 text-neutral-600 dark:text-neutral-300 leading-relaxed">
                 <p>
-                  I'm a passionate software engineer dedicated to building innovative solutions 
-                  that make a real impact. With a strong foundation in modern web technologies, 
-                  I specialize in creating scalable, user-centric applications.
+                  I'm a Software Engineer based in Seattle with a background in full-stack web development, AI/ML applications, and community leadership. I specialize in building scalable, user-centered applications using TypeScript, React, Tailwind, and Node.js, and I have hands-on experience with REST APIs, PostgreSQL, and cloud deployment pipelines through platforms like Vercel and Render.
                 </p>
                 <p>
-                  My journey in software development has been driven by curiosity and a desire to 
-                  solve complex problems. I thrive in collaborative environments where I can 
-                  contribute to meaningful projects and continuously learn from talented teams.
+                  Before transitioning into tech, I served as a Communications Manager in the U.S. Army's 1st Special Forces Group, where I led and trained teams in high-pressure environments and earned an Active TS/SCI clearance. That experience sharpened my skills in problem-solving, systems thinking, and collaboration — qualities I now bring to every engineering project.
                 </p>
+                <p>
+                  I'm passionate about using technology to improve accessibility, community engagement, and data-driven decision-making. As the Founder of the Seattle Chinatown Book Club, I lead an 8-person team to organize monthly events that bring together over 80 attendees and partner with local organizations to support cultural and community initiatives.
+                </p>
+                <p>
+                  I thrive at the intersection of technology, leadership, and social impact, and I'm always eager to collaborate on projects that make a measurable difference.
+                </p>
+              </div>
+              
+              {/* Image Gallery - Staggered Layout */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ScrollFadeIn delay={300}>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={servicePicture} 
+                        alt="Service and community engagement" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <p className="text-sm font-medium">Service & Community</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollFadeIn>
+                
+                <ScrollFadeIn delay={400}>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={mentoringImage} 
+                        alt="Mentoring and leadership" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <p className="text-sm font-medium">Mentoring & Leadership</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollFadeIn>
+                
+                <ScrollFadeIn delay={500}>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:col-span-2">
+                    <div className="aspect-[16/9] overflow-hidden">
+                      <img 
+                        src={bookClubImage} 
+                        alt="Seattle Chinatown Book Club meeting" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <p className="text-sm font-medium">Seattle Chinatown Book Club</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollFadeIn>
               </div>
             </div>
 

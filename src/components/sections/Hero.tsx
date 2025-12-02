@@ -48,7 +48,7 @@ export default function Hero() {
                   <img 
                     src={runningImage} 
                     alt="Mitchell Keo - Software Engineer" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-125"
                   />
                 </div>
               </div>
