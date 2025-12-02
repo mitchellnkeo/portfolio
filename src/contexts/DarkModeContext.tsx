@@ -9,14 +9,15 @@ const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined
 
 export function DarkModeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window === 'undefined') return false;
+    if (typeof window === 'undefined') return true;
     
     const stored = localStorage.getItem('darkMode');
     if (stored !== null) {
       return stored === 'true';
     }
     
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Default to dark mode
+    return true;
   });
 
   // Apply dark mode class on mount and when isDark changes
