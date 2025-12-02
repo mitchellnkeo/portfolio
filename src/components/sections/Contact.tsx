@@ -81,7 +81,7 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Location</h3>
             </div>
             <p className="text-lg text-neutral-700 dark:text-neutral-300">
-              San Francisco, CA
+              Seattle, WA
             </p>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
               Open to remote opportunities worldwide

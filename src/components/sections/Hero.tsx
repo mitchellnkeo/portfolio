@@ -73,14 +73,8 @@ export default function Hero() {
             variant="outline"
             size="lg"
             href="/resume.pdf"
+            download="Mitchell_Keo_Resume.pdf"
             className="group"
-            onClick={(e) => {
-              // In a real app, this would download the resume
-              if (e) {
-                e.preventDefault();
-              }
-              console.log('Resume download - implement later');
-            }}
           >
             <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
             Download Resume

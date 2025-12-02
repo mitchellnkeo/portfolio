@@ -5,6 +5,7 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
   href?: string;
+  download?: string;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
@@ -15,6 +16,7 @@ export default function Button({
   size = 'md',
   children,
   href,
+  download,
   onClick,
   className = '',
   type,
@@ -39,6 +41,7 @@ export default function Button({
     return (
       <a
         href={href}
+        download={download}
         onClick={onClick}
         className={classes}
       >
