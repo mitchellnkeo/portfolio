@@ -52,7 +52,7 @@ export default function Hero() {
                 </div>
               </div>
               {/* Decorative ring */}
-              <div className="absolute inset-0 rounded-full border-4 border-primary-200 dark:border-primary-800 animate-ping opacity-20"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-primary-200 dark:border-primary-800 animate-ping opacity-20" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -64,8 +64,9 @@ export default function Hero() {
             size="lg"
             onClick={() => handleScroll('contact')}
             className="group"
+            aria-label="Get in touch - navigate to contact section"
           >
-            <Mail className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+            <Mail className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
             Get In Touch
           </Button>
           
@@ -75,8 +76,9 @@ export default function Hero() {
             href="/resume.pdf"
             download="Mitchell_Keo_Resume.pdf"
             className="group"
+            aria-label="Download Mitchell Keo's resume PDF"
           >
-            <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+            <Download className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
             Download Resume
           </Button>
           
@@ -85,9 +87,10 @@ export default function Hero() {
             size="lg"
             onClick={() => handleScroll('projects')}
             className="group"
+            aria-label="View projects - navigate to projects section"
           >
             View Projects
-            <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+            <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" aria-hidden="true" />
           </Button>
         </div>
 
@@ -95,10 +98,10 @@ export default function Hero() {
         <div className="mt-16 flex justify-center animate-bounce">
           <button
             onClick={() => handleScroll('about')}
-            className="text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            className="text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
             aria-label="Scroll to about section"
           >
-            <ArrowDown className="w-6 h-6" />
+            <ArrowDown className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
       </div>

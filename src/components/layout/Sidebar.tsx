@@ -68,6 +68,7 @@ export default function Sidebar() {
 
       {/* Sidebar Navigation */}
       <aside
+        aria-label="Main navigation"
         className={`
           fixed left-0 top-0 h-full w-20 md:w-24 lg:w-28
           bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md
@@ -101,15 +102,16 @@ export default function Sidebar() {
               <button
                 key={section.id}
                 onClick={() => handleScroll(section.id)}
+                aria-label={`Navigate to ${section.label} section`}
+                aria-current={isActive ? 'page' : undefined}
                 className={`
                   group relative flex flex-col items-center gap-2 p-3 rounded-xl
-                  transition-all duration-200
+                  transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
                   ${isActive
                     ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 shadow-md'
                     : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-primary-600 dark:hover:text-primary-400'
                   }
                 `}
-                aria-current={isActive ? 'page' : undefined}
                 title={section.label}
               >
                 <Icon 
@@ -118,6 +120,7 @@ export default function Sidebar() {
                     transition-transform duration-200
                     ${isActive ? 'scale-110' : 'group-hover:scale-110'}
                   `}
+                  aria-hidden="true"
                 />
                 <span className="text-xs font-medium hidden lg:block text-center">
                   {section.label}

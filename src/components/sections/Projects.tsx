@@ -48,12 +48,15 @@ function Projects() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="Project category filters">
           {filters.map((filterOption) => (
             <button
               key={filterOption.value}
               onClick={() => setFilter(filterOption.value)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
+              role="tab"
+              aria-selected={filter === filterOption.value}
+              aria-controls="projects-grid"
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
                 filter === filterOption.value
                   ? 'bg-primary-600 dark:bg-primary-500 text-white shadow-lg'
                   : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border-2 border-neutral-200 dark:border-neutral-700'
@@ -66,7 +69,7 @@ function Projects() {
 
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="tabpanel">
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.id}

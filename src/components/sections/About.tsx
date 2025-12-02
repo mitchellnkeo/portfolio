@@ -41,17 +41,17 @@ export default function About() {
 
           {/* Right Column - Image Gallery */}
           <ScrollFadeIn delay={200}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" role="list">
                 <ScrollFadeIn delay={300}>
-                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300" role="listitem">
                     <div className="aspect-[4/3] overflow-hidden">
                       <img 
                         src={servicePicture} 
-                        alt="Service and community engagement" 
+                        alt="Service and community engagement activities" 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <p className="text-sm font-medium">Service & Community</p>
                       </div>
@@ -60,15 +60,15 @@ export default function About() {
                 </ScrollFadeIn>
                 
                 <ScrollFadeIn delay={400}>
-                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8" role="listitem">
                     <div className="aspect-[4/3] overflow-hidden">
                       <img 
                         src={mentoringImage} 
-                        alt="Mentoring and leadership" 
+                        alt="Mentoring and leadership activities" 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <p className="text-sm font-medium">Mentoring & Leadership</p>
                       </div>
@@ -77,15 +77,15 @@ export default function About() {
                 </ScrollFadeIn>
                 
                 <ScrollFadeIn delay={500}>
-                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300" role="listitem">
                     <div className="aspect-[4/3] overflow-hidden">
                       <img 
                         src={searacImage} 
-                        alt="SEARAC community advocacy" 
+                        alt="SEARAC community advocacy event" 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <p className="text-sm font-medium">Community Advocacy</p>
                       </div>
@@ -94,15 +94,15 @@ export default function About() {
                 </ScrollFadeIn>
                 
                 <ScrollFadeIn delay={600}>
-                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8 md:col-span-2">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8 md:col-span-2" role="listitem">
                     <div className="aspect-[16/9] overflow-hidden">
                       <img 
                         src={bookClubImage} 
-                        alt="Seattle Chinatown Book Club meeting" 
+                        alt="Seattle Chinatown Book Club meeting event" 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                         <p className="text-sm font-medium">Seattle Chinatown Book Club</p>
                       </div>

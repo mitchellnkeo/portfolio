@@ -17,9 +17,16 @@ function App() {
   return (
     <DarkModeProvider>
       <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-200">
+        {/* Skip to main content link for screen readers */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Sidebar />
         <Header />
-        <main className="ml-0 md:ml-24 lg:ml-28 transition-all duration-300">
+        <main id="main-content" className="ml-0 md:ml-24 lg:ml-28 transition-all duration-300">
           <Suspense fallback={<LoadingSpinner size="lg" />}>
             <Hero />
             <About />
