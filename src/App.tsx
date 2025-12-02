@@ -13,7 +13,7 @@ const Contact = lazy(() => import('./components/sections/Contact'));
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         <Suspense fallback={<LoadingSpinner size="lg" />}>

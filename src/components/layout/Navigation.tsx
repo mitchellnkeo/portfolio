@@ -56,8 +56,8 @@ export default function Navigation() {
             onClick={() => handleScroll(section.id)}
             className={`transition-colors duration-200 font-medium ${
               activeSection === section.id
-                ? 'text-primary-400 border-b-2 border-primary-400'
-                : 'text-neutral-300 hover:text-primary-400'
+                ? 'text-primary-600 border-b-2 border-primary-600'
+                : 'text-neutral-700 hover:text-primary-600'
             }`}
             aria-current={activeSection === section.id ? 'page' : undefined}
           >
@@ -68,7 +68,7 @@ export default function Navigation() {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden p-2 text-neutral-300 hover:text-primary-400 transition-colors"
+        className="md:hidden p-2 text-neutral-700 hover:text-primary-600 transition-colors"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label="Toggle menu"
         aria-expanded={isMobileMenuOpen}
@@ -78,7 +78,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <nav className="absolute top-full left-0 right-0 bg-neutral-900 border-b border-neutral-800 shadow-lg md:hidden">
+        <nav className="absolute top-full left-0 right-0 bg-white border-b border-neutral-200 shadow-lg md:hidden">
           <div className="flex flex-col">
             {navSections.map((section) => (
               <button
@@ -86,8 +86,8 @@ export default function Navigation() {
                 onClick={() => handleScroll(section.id)}
                 className={`px-4 py-3 text-left transition-colors duration-200 font-medium ${
                   activeSection === section.id
-                    ? 'text-primary-400 bg-primary-900/20 border-l-4 border-primary-400'
-                    : 'text-neutral-300 hover:text-primary-400 hover:bg-neutral-800'
+                    ? 'text-primary-600 bg-primary-50 border-l-4 border-primary-600'
+                    : 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-50'
                 }`}
                 aria-current={activeSection === section.id ? 'page' : undefined}
               >
