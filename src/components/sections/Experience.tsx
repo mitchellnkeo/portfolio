@@ -56,12 +56,43 @@ function ExperienceCard({ experience }: { experience: WorkExperience }) {
               Notable Achievements:
             </h4>
             <ul className="space-y-2">
-              {experience.achievements.map((achievement, index) => (
-                <li key={index} className="text-neutral-600 dark:text-neutral-300 text-sm flex items-start gap-2">
-                  <span className="text-secondary-600 dark:text-secondary-400 mt-1.5">▸</span>
-                  <span>{achievement}</span>
-                </li>
-              ))}
+              {experience.achievements.map((achievement, index) => {
+                // Check if achievement contains bullet points (starts with "Army Achievement Medal")
+                const isArmyAchievement = achievement.startsWith('Army Achievement Medal');
+                
+                if (isArmyAchievement) {
+                  // Split by periods to create sub-bullets
+                  const parts = achievement.split('. ').filter(p => p.trim());
+                  const mainTitle = parts[0]; // "Army Achievement Medal - Awarded for..."
+                  const subPoints = parts.slice(1); // Remaining bullet points
+                  
+                  return (
+                    <li key={index} className="text-neutral-600 dark:text-neutral-300 text-sm">
+                      <div className="flex items-start gap-2 mb-1">
+                        <span className="text-secondary-600 dark:text-secondary-400 mt-1.5">▸</span>
+                        <span className="font-semibold">{mainTitle}</span>
+                      </div>
+                      {subPoints.length > 0 && (
+                        <ul className="ml-6 mt-1 space-y-1">
+                          {subPoints.map((point, subIndex) => (
+                            <li key={subIndex} className="flex items-start gap-2">
+                              <span className="text-secondary-600 dark:text-secondary-400 mt-1.5 text-xs">•</span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                }
+                
+                return (
+                  <li key={index} className="text-neutral-600 dark:text-neutral-300 text-sm flex items-start gap-2">
+                    <span className="text-secondary-600 dark:text-secondary-400 mt-1.5">▸</span>
+                    <span>{achievement}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
