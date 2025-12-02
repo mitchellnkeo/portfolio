@@ -62,12 +62,10 @@ export default function Skills() {
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group relative p-4 bg-white dark:bg-neutral-800 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-200 hover:shadow-lg"
+                      className="group relative p-4 bg-white dark:bg-neutral-800 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-200 hover:shadow-lg flex items-center justify-center min-h-[80px]"
                     >
                       {/* Skill Name */}
-                      <div className="text-center">
-                        <p className="font-semibold text-neutral-900 dark:text-white">{skill.name}</p>
-                      </div>
+                      <p className="font-semibold text-neutral-900 dark:text-white text-center">{skill.name}</p>
 
                       {/* Hover Effect */}
                       <div className="absolute inset-0 bg-primary-50 dark:bg-primary-900/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10"></div>
