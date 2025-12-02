@@ -23,15 +23,15 @@ export default function Skills() {
   const categories: Skill['category'][] = ['language', 'framework', 'tool', 'database', 'cloud'];
 
   return (
-    <section id="skills" className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-neutral-50 to-white">
+    <section id="skills" className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
             Skills & Technologies
           </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
             A comprehensive overview of the technologies and tools I work with
           </p>
         </div>
@@ -48,10 +48,10 @@ export default function Skills() {
               <div key={category} className="space-y-6">
                 {/* Category Header */}
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary-50 rounded-lg border border-primary-200">
-                    <IconComponent className="w-6 h-6 text-primary-600" />
+                  <div className="p-2 bg-primary-50 dark:bg-primary-900/30 rounded-lg border border-primary-200 dark:border-primary-800">
+                    <IconComponent className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-neutral-900">
+                  <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">
                     {categoryLabels[category]}
                   </h3>
                 </div>
@@ -61,11 +61,11 @@ export default function Skills() {
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group relative p-4 bg-white rounded-lg border-2 border-neutral-200 hover:border-primary-500 transition-all duration-200 hover:shadow-lg"
+                      className="group relative p-4 bg-white dark:bg-neutral-800 rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-200 hover:shadow-lg"
                     >
                       {/* Skill Name */}
                       <div className="text-center">
-                        <p className="font-semibold text-neutral-900 mb-2">{skill.name}</p>
+                        <p className="font-semibold text-neutral-900 dark:text-white mb-2">{skill.name}</p>
                         
                         {/* Proficiency Indicator */}
                         {skill.proficiency && (
@@ -91,7 +91,7 @@ export default function Skills() {
                       </div>
 
                       {/* Hover Effect */}
-                      <div className="absolute inset-0 bg-primary-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10"></div>
+                      <div className="absolute inset-0 bg-primary-50 dark:bg-primary-900/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10"></div>
                     </div>
                   ))}
                 </div>
@@ -101,9 +101,9 @@ export default function Skills() {
         </div>
 
         {/* Legend */}
-        <div className="mt-16 pt-8 border-t border-neutral-200">
+        <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-700">
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <span className="font-semibold text-neutral-700">Proficiency:</span>
+            <span className="font-semibold text-neutral-700 dark:text-neutral-300">Proficiency:</span>
             <div className="flex items-center gap-2">
               <div className="flex gap-1">
                 <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
@@ -111,16 +111,16 @@ export default function Skills() {
                 <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
                 <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
               </div>
-              <span className="text-neutral-600">Beginner</span>
+              <span className="text-neutral-600 dark:text-neutral-400">Beginner</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="flex gap-1">
                 <div className="w-2 h-2 rounded-full bg-primary-300"></div>
                 <div className="w-2 h-2 rounded-full bg-primary-300"></div>
                 <div className="w-2 h-2 rounded-full bg-primary-300"></div>
-                <div className="w-2 h-2 rounded-full bg-neutral-300"></div>
+                <div className="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-600"></div>
               </div>
-              <span className="text-neutral-600">Intermediate</span>
+              <span className="text-neutral-600 dark:text-neutral-400">Intermediate</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="flex gap-1">
@@ -129,7 +129,7 @@ export default function Skills() {
                 <div className="w-2 h-2 rounded-full bg-primary-500"></div>
                 <div className="w-2 h-2 rounded-full bg-primary-500"></div>
               </div>
-              <span className="text-neutral-600">Advanced</span>
+              <span className="text-neutral-600 dark:text-neutral-400">Advanced</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="flex gap-1">
@@ -138,7 +138,7 @@ export default function Skills() {
                 <div className="w-2 h-2 rounded-full bg-primary-700"></div>
                 <div className="w-2 h-2 rounded-full bg-primary-700"></div>
               </div>
-              <span className="text-neutral-600">Expert</span>
+              <span className="text-neutral-600 dark:text-neutral-400">Expert</span>
             </div>
           </div>
         </div>

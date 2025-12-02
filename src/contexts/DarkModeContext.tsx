@@ -1,0 +1,59 @@
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+
+interface DarkModeContextType {
+  isDark: boolean;
+  toggleDarkMode: () => void;
+}
+
+const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
+
+export function DarkModeProvider({ children }: { children: ReactNode }) {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    
+    const stored = localStorage.getItem('darkMode');
+    if (stored !== null) {
+      return stored === 'true';
+    }
+    
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  // Apply dark mode class on mount and when isDark changes
+  useEffect(() => {
+    const root = document.documentElement;
+    
+    if (isDark) {
+      root.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
+    } else {
+      root.classList.remove('dark');
+      root.setAttribute('data-theme', 'light');
+    }
+    
+    localStorage.setItem('darkMode', String(isDark));
+  }, [isDark]);
+
+  const toggleDarkMode = () => {
+    console.log('toggleDarkMode called, current isDark:', isDark);
+    setIsDark((prev) => {
+      console.log('Setting isDark to:', !prev);
+      return !prev;
+    });
+  };
+
+  return (
+    <DarkModeContext.Provider value={{ isDark, toggleDarkMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+}
+
+export function useDarkMode() {
+  const context = useContext(DarkModeContext);
+  if (context === undefined) {
+    throw new Error('useDarkMode must be used within a DarkModeProvider');
+  }
+  return context;
+}
+

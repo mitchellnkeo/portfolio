@@ -11,7 +11,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-50 text-neutral-600 py-8 border-t border-neutral-200">
+    <footer className="bg-neutral-50 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 py-8 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-4">
           {/* Social Links */}
@@ -24,7 +24,7 @@ export default function Footer() {
                   href={link.url}
                   target={link.url.startsWith('mailto:') ? undefined : '_blank'}
                   rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                  className="text-neutral-500 hover:text-primary-600 transition-colors duration-200"
+                  className="text-neutral-500 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   aria-label={link.name}
                 >
                   {IconComponent ? (
@@ -37,7 +37,7 @@ export default function Footer() {
             })}
           </div>
           {/* Copyright */}
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-neutral-400 dark:text-neutral-500">
             © {currentYear} Mitchell Keo. All rights reserved.
           </p>
         </div>

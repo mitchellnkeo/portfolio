@@ -17,16 +17,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-neutral-200"
+        className="relative bg-white dark:bg-neutral-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-neutral-200 dark:border-neutral-700 transition-colors duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors"
+          className="absolute top-4 right-4 z-10 p-2 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 rounded-full transition-colors"
           aria-label="Close modal"
         >
-          <X className="w-6 h-6 text-neutral-700" />
+          <X className="w-6 h-6 text-neutral-700 dark:text-neutral-300" />
         </button>
 
         {/* Project Image */}
@@ -53,30 +53,30 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
         {/* Project Content */}
         <div className="p-8">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-2">{project.title}</h2>
+          <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">{project.title}</h2>
           
-          <p className="text-lg text-neutral-600 mb-6">{project.description}</p>
+          <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">{project.description}</p>
 
           {/* Problem & Solution */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
-              <h3 className="font-semibold text-neutral-900 mb-2">Problem</h3>
-              <p className="text-neutral-600 text-sm">{project.problem}</p>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Problem</h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm">{project.problem}</p>
             </div>
             <div>
-              <h3 className="font-semibold text-neutral-900 mb-2">Solution</h3>
-              <p className="text-neutral-600 text-sm">{project.solution}</p>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Solution</h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm">{project.solution}</p>
             </div>
           </div>
 
           {/* Technologies */}
           <div className="mb-6">
-            <h3 className="font-semibold text-neutral-900 mb-3">Technologies Used</h3>
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Technologies Used</h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-sm font-medium bg-primary-50 text-primary-700 rounded-full border border-primary-200"
+                  className="px-3 py-1 text-sm font-medium bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full border border-primary-200 dark:border-primary-800"
                 >
                   {tech}
                 </span>
@@ -86,11 +86,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
           {/* Features */}
           <div className="mb-6">
-            <h3 className="font-semibold text-neutral-900 mb-3">Key Features</h3>
+            <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Key Features</h3>
             <ul className="space-y-2">
               {project.features.map((feature, index) => (
-                <li key={index} className="text-neutral-600 flex items-start gap-2">
-                  <span className="text-primary-600 mt-1">•</span>
+                <li key={index} className="text-neutral-600 dark:text-neutral-300 flex items-start gap-2">
+                  <span className="text-primary-600 dark:text-primary-400 mt-1">•</span>
                   <span>{feature}</span>
                 </li>
               ))}
@@ -98,7 +98,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-4 pt-4 border-t border-neutral-200">
+          <div className="flex gap-4 pt-4 border-t border-neutral-200 dark:border-neutral-700">
             {project.liveUrl && (
               <Button variant="primary" href={project.liveUrl} className="flex-1">
                 <ExternalLink className="w-4 h-4 mr-2" />
