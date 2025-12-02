@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { DarkModeProvider } from './contexts/DarkModeContext';
 import Header from './components/layout/Header';
+import Sidebar from './components/layout/Sidebar';
 import Footer from './components/layout/Footer';
 import LoadingSpinner from './components/common/LoadingSpinner';
 
@@ -16,8 +17,9 @@ function App() {
   return (
     <DarkModeProvider>
       <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-200">
+        <Sidebar />
         <Header />
-        <main>
+        <main className="ml-0 md:ml-24 lg:ml-28 transition-all duration-300">
           <Suspense fallback={<LoadingSpinner size="lg" />}>
             <Hero />
             <About />

@@ -11,7 +11,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-50 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 py-8 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-200">
+    <footer className="bg-neutral-50 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 py-8 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-200 ml-0 md:ml-24 lg:ml-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-4">
           {/* Social Links */}

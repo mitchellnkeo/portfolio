@@ -1,5 +1,6 @@
 import { ArrowDown, Download, Mail } from 'lucide-react';
 import Button from '../common/Button';
+import runningImage from '../../assets/images/Running.JPG';
 
 export default function Hero() {
   const handleScroll = (sectionId: string) => {
@@ -41,12 +42,14 @@ export default function Hero() {
           {/* Right Column - Avatar/Image */}
           <div className="flex justify-center lg:justify-end animate-fade-in animation-delay-300">
             <div className="relative">
-              {/* Placeholder for professional headshot */}
+              {/* Professional headshot */}
               <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 p-1 shadow-2xl">
-                <div className="w-full h-full rounded-full bg-white dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
-                  <div className="text-6xl sm:text-7xl lg:text-8xl font-bold text-primary-600 dark:text-primary-400">
-                    MK
-                  </div>
+                <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-neutral-800">
+                  <img 
+                    src={runningImage} 
+                    alt="Mitchell Keo - Software Engineer" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               {/* Decorative ring */}

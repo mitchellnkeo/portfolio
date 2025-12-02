@@ -35,11 +35,7 @@ export function DarkModeProvider({ children }: { children: ReactNode }) {
   }, [isDark]);
 
   const toggleDarkMode = () => {
-    console.log('toggleDarkMode called, current isDark:', isDark);
-    setIsDark((prev) => {
-      console.log('Setting isDark to:', !prev);
-      return !prev;
-    });
+    setIsDark((prev) => !prev);
   };
 
   return (
