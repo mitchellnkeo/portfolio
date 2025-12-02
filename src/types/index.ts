@@ -15,7 +15,7 @@ export interface Project {
 // Skill types
 export interface Skill {
   name: string;
-  category: 'language' | 'framework' | 'tool' | 'database' | 'cloud';
+  category: 'languages' | 'cloud' | 'database' | 'server' | 'client' | 'fundamentals';
   proficiency?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
 }
 

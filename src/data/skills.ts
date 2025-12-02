@@ -1,62 +1,61 @@
 import type { Skill } from '../types';
 
 export const skills: Skill[] = [
-  // Programming Languages
-  { name: 'JavaScript', category: 'language', proficiency: 'expert' },
-  { name: 'TypeScript', category: 'language', proficiency: 'expert' },
-  { name: 'Python', category: 'language', proficiency: 'advanced' },
-  { name: 'Java', category: 'language', proficiency: 'advanced' },
-  { name: 'C++', category: 'language', proficiency: 'intermediate' },
-  { name: 'Go', category: 'language', proficiency: 'intermediate' },
-  { name: 'Rust', category: 'language', proficiency: 'intermediate' },
+  // Languages & Libraries
+  { name: 'JavaScript', category: 'languages' },
+  { name: 'TypeScript', category: 'languages' },
+  { name: 'HTML', category: 'languages' },
+  { name: 'CSS', category: 'languages' },
+  { name: 'Node.js', category: 'languages' },
+  { name: 'Express.js', category: 'languages' },
+  { name: 'React.js', category: 'languages' },
+  { name: 'Tailwind', category: 'languages' },
+  { name: 'Python', category: 'languages' },
   
-  // Frameworks and Libraries
-  { name: 'React', category: 'framework', proficiency: 'expert' },
-  { name: 'Next.js', category: 'framework', proficiency: 'advanced' },
-  { name: 'Vue.js', category: 'framework', proficiency: 'advanced' },
-  { name: 'Node.js', category: 'framework', proficiency: 'expert' },
-  { name: 'Express', category: 'framework', proficiency: 'advanced' },
-  { name: 'FastAPI', category: 'framework', proficiency: 'advanced' },
-  { name: 'Django', category: 'framework', proficiency: 'intermediate' },
-  { name: 'Spring Boot', category: 'framework', proficiency: 'advanced' },
-  { name: 'Tailwind CSS', category: 'framework', proficiency: 'expert' },
+  // Cloud & Deployment
+  { name: 'GitHub Actions', category: 'cloud' },
+  { name: 'Git', category: 'cloud' },
+  { name: 'Github', category: 'cloud' },
+  { name: 'Render', category: 'cloud' },
+  { name: 'Vercel', category: 'cloud' },
   
-  // Tools and Platforms
-  { name: 'Git', category: 'tool', proficiency: 'expert' },
-  { name: 'Docker', category: 'tool', proficiency: 'advanced' },
-  { name: 'Kubernetes', category: 'tool', proficiency: 'intermediate' },
-  { name: 'CI/CD', category: 'tool', proficiency: 'advanced' },
-  { name: 'Linux', category: 'tool', proficiency: 'advanced' },
-  { name: 'AWS', category: 'tool', proficiency: 'advanced' },
-  { name: 'Vercel', category: 'tool', proficiency: 'expert' },
-  { name: 'Netlify', category: 'tool', proficiency: 'advanced' },
+  // Database
+  { name: 'Data Structures', category: 'database' },
+  { name: 'PostgreSQL', category: 'database' },
+  { name: 'SQL', category: 'database' },
+  { name: 'Algorithms', category: 'database' },
+  { name: 'Relational Databases', category: 'database' },
+  { name: 'ERD', category: 'database' },
   
-  // Database Technologies
-  { name: 'PostgreSQL', category: 'database', proficiency: 'advanced' },
-  { name: 'MongoDB', category: 'database', proficiency: 'advanced' },
-  { name: 'MySQL', category: 'database', proficiency: 'advanced' },
-  { name: 'Redis', category: 'database', proficiency: 'intermediate' },
-  { name: 'Firebase', category: 'database', proficiency: 'advanced' },
+  // Server-Side
+  { name: 'Test Driven Development (TDD)', category: 'server' },
+  { name: 'JSON', category: 'server' },
+  { name: 'Docker', category: 'server' },
+  { name: 'REST API', category: 'server' },
+  { name: 'Vite', category: 'server' },
   
-  // Cloud Services
-  { name: 'AWS', category: 'cloud', proficiency: 'advanced' },
-  { name: 'Azure', category: 'cloud', proficiency: 'intermediate' },
-  { name: 'Google Cloud', category: 'cloud', proficiency: 'intermediate' },
-  { name: 'Vercel', category: 'cloud', proficiency: 'expert' },
+  // Client-Side
+  { name: 'DOM API', category: 'client' },
+  { name: 'Responsive Design', category: 'client' },
+  { name: 'UI & UX Design', category: 'client' },
+  { name: 'Microservices', category: 'client' },
+  
+  // Fundamentals of Computer Science
+  { name: 'Object-oriented programming (OOP)', category: 'fundamentals' },
+  { name: 'Agile Methodology', category: 'fundamentals' },
+  { name: 'SDLC', category: 'fundamentals' },
+  { name: 'Command Line', category: 'fundamentals' },
+  { name: 'Linux', category: 'fundamentals' },
+  { name: 'Full Stack Engineering', category: 'fundamentals' },
+  { name: 'Web Development', category: 'fundamentals' },
 ];
 
 export const categoryLabels: Record<Skill['category'], string> = {
-  language: 'Programming Languages',
-  framework: 'Frameworks & Libraries',
-  tool: 'Tools & Platforms',
-  database: 'Database Technologies',
-  cloud: 'Cloud Services',
-};
-
-export const proficiencyColors: Record<NonNullable<Skill['proficiency']>, string> = {
-  beginner: 'bg-neutral-300',
-  intermediate: 'bg-primary-300',
-  advanced: 'bg-primary-500',
-  expert: 'bg-primary-700',
+  languages: 'Languages & Libraries',
+  cloud: 'Cloud & Deployment',
+  database: 'Database',
+  server: 'Server-Side',
+  client: 'Client-Side',
+  fundamentals: 'Fundamentals of Computer Science',
 };
 

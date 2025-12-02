@@ -1,13 +1,14 @@
-import { Code, Database, Cloud, Settings } from 'lucide-react';
+import { Code, Database, Cloud, Server, Monitor, BookOpen } from 'lucide-react';
 import { skills, categoryLabels } from '../../data/skills';
 import type { Skill } from '../../types';
 
 const categoryIcons = {
-  language: Code,
-  framework: Code,
-  tool: Settings,
-  database: Database,
+  languages: Code,
   cloud: Cloud,
+  database: Database,
+  server: Server,
+  client: Monitor,
+  fundamentals: BookOpen,
 };
 
 export default function Skills() {
@@ -20,7 +21,7 @@ export default function Skills() {
     return acc;
   }, {} as Record<Skill['category'], Skill[]>);
 
-  const categories: Skill['category'][] = ['language', 'framework', 'tool', 'database', 'cloud'];
+  const categories: Skill['category'][] = ['languages', 'cloud', 'database', 'server', 'client', 'fundamentals'];
 
   return (
     <section id="skills" className="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-800 dark:to-neutral-900 transition-colors duration-200">
