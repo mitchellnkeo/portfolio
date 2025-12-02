@@ -1,4 +1,4 @@
-import { Code, Coffee, Gamepad2, Music } from 'lucide-react';
+import { Code, Activity, Drum, Dumbbell, Users } from 'lucide-react';
 import ScrollFadeIn from '../common/ScrollFadeIn';
 import servicePicture from '../../assets/images/Service_Picture.jpg';
 import mentoringImage from '../../assets/images/Mentoring.JPG';
@@ -152,20 +152,20 @@ export default function About() {
           <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Beyond Code</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-              <Coffee className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Coffee</span>
+              <Activity className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Running</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-              <Music className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Music</span>
+              <Drum className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Drumming</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-              <Gamepad2 className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Gaming</span>
+              <Dumbbell className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Weightlifting</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-              <Code className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Open Source</span>
+              <Users className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Community</span>
             </div>
           </div>
         </div>
