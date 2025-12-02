@@ -3,6 +3,7 @@ import ScrollFadeIn from '../common/ScrollFadeIn';
 import servicePicture from '../../assets/images/Service_Picture.jpg';
 import mentoringImage from '../../assets/images/Mentoring.JPG';
 import bookClubImage from '../../assets/images/BookClubMeeting.jpeg';
+import searacImage from '../../assets/images/SEARAC.jpg';
 
 export default function About() {
   return (
@@ -16,32 +17,9 @@ export default function About() {
           <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column - Image */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left Column - Text Content */}
           <ScrollFadeIn delay={100}>
-            <div className="order-2 lg:order-1">
-            <div className="relative">
-              {/* Professional Photo Placeholder */}
-              <div className="relative w-full max-w-md mx-auto">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 p-1 shadow-2xl">
-                  <div className="w-full h-full rounded-2xl bg-white dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
-                    <div className="text-8xl font-bold text-primary-600 dark:text-primary-400">
-                      MK
-                    </div>
-                  </div>
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-100 dark:bg-primary-900/30 rounded-full opacity-50 blur-2xl -z-10"></div>
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary-100 dark:bg-secondary-900/30 rounded-full opacity-50 blur-2xl -z-10"></div>
-              </div>
-            </div>
-          </div>
-          </ScrollFadeIn>
-
-          {/* Right Column - Content */}
-          <ScrollFadeIn delay={200}>
-            <div className="order-1 lg:order-2 space-y-8">
-            {/* Professional Background */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Professional Journey</h3>
               <div className="space-y-3 text-neutral-600 dark:text-neutral-300 leading-relaxed">
@@ -58,9 +36,12 @@ export default function About() {
                   I thrive at the intersection of technology, leadership, and social impact, and I'm always eager to collaborate on projects that make a measurable difference.
                 </p>
               </div>
-              
-              {/* Image Gallery - Staggered Layout */}
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            </div>
+          </ScrollFadeIn>
+
+          {/* Right Column - Image Gallery */}
+          <ScrollFadeIn delay={200}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ScrollFadeIn delay={300}>
                   <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                     <div className="aspect-[4/3] overflow-hidden">
@@ -96,7 +77,24 @@ export default function About() {
                 </ScrollFadeIn>
                 
                 <ScrollFadeIn delay={500}>
-                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:col-span-2">
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={searacImage} 
+                        alt="SEARAC community advocacy" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <p className="text-sm font-medium">Community Advocacy</p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollFadeIn>
+                
+                <ScrollFadeIn delay={600}>
+                  <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 md:mt-8 md:col-span-2">
                     <div className="aspect-[16/9] overflow-hidden">
                       <img 
                         src={bookClubImage} 
@@ -112,66 +110,64 @@ export default function About() {
                   </div>
                 </ScrollFadeIn>
               </div>
-            </div>
+          </ScrollFadeIn>
+        </div>
 
-            {/* Current Role & Focus Areas */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Current Focus</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Code className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-neutral-900 dark:text-white">Full-Stack Development</p>
-                    <p className="text-neutral-600 dark:text-neutral-300">
-                      Building end-to-end solutions with modern frameworks and best practices
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Code className="w-6 h-6 text-primary-500 dark:text-primary-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-neutral-900 dark:text-white">User Experience</p>
-                    <p className="text-neutral-600 dark:text-neutral-300">
-                      Creating intuitive, accessible interfaces that users love
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Code className="w-6 h-6 text-primary-500 dark:text-primary-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-neutral-900 dark:text-white">Performance Optimization</p>
-                    <p className="text-neutral-600 dark:text-neutral-300">
-                      Ensuring fast, efficient applications that scale
-                    </p>
-                  </div>
-                </div>
+        {/* Current Role & Focus Areas */}
+        <div className="mt-16 space-y-4">
+          <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Current Focus</h3>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <Code className="w-6 h-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-neutral-900 dark:text-white">Full-Stack Development</p>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Building end-to-end solutions with modern frameworks and best practices
+                </p>
               </div>
             </div>
-
-            {/* Personal Interests */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Beyond Code</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-                  <Coffee className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Coffee</span>
-                </div>
-                <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-                  <Music className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Music</span>
-                </div>
-                <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-                  <Gamepad2 className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Gaming</span>
-                </div>
-                <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
-                  <Code className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Open Source</span>
-                </div>
+            <div className="flex items-start gap-3">
+              <Code className="w-6 h-6 text-primary-500 dark:text-primary-400 flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-neutral-900 dark:text-white">User Experience</p>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Creating intuitive, accessible interfaces that users love
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Code className="w-6 h-6 text-primary-500 dark:text-primary-400 flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-neutral-900 dark:text-white">Performance Optimization</p>
+                <p className="text-neutral-600 dark:text-neutral-300">
+                  Ensuring fast, efficient applications that scale
+                </p>
               </div>
             </div>
           </div>
-          </ScrollFadeIn>
+        </div>
+
+        {/* Personal Interests */}
+        <div className="mt-12 space-y-4">
+          <h3 className="text-2xl font-bold text-neutral-900 dark:text-white">Beyond Code</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
+              <Coffee className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Coffee</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
+              <Music className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Music</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
+              <Gamepad2 className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Gaming</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors group border border-neutral-200 dark:border-neutral-700">
+              <Code className="w-8 h-8 text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">Open Source</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

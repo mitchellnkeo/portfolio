@@ -26,7 +26,7 @@ export default function Hero() {
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-neutral-900 dark:text-white leading-tight">
                 Hi, I'm{' '}
-                <span className="text-primary-600 dark:text-primary-400">Mitchell Keo</span>
+                <span className="text-primary-600 dark:text-primary-400 whitespace-nowrap">Mitchell&nbsp;Keo</span>
               </h1>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-neutral-700 dark:text-neutral-300">
                 Software Engineer
@@ -34,8 +34,7 @@ export default function Hero() {
             </div>
             
             <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Building innovative solutions with modern web technologies. 
-              Passionate about creating exceptional user experiences and scalable applications.
+              Creating and building with a passion for technology and community.
             </p>
           </div>
 
