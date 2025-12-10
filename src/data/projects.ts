@@ -57,7 +57,7 @@ export const projects: Project[] = [
       'AsyncStorage',
     ],
     liveUrl: 'https://seattle-wayfare.app',
-    githubUrl: 'https://github.com/mitchellnkeo/seattle-wayfare',
+    githubUrl: 'https://github.com/mitchellnkeo/seattlewayfare',
     imageUrl: '/images/seattle-wayfare.jpg',
     features: [
       'Predictive analytics with reliability scoring algorithm',
