@@ -30,12 +30,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         </button>
 
         {/* Project Image */}
-        <div className="relative h-64 bg-gradient-to-br from-primary-400 to-secondary-500">
+        <div className="relative w-full bg-gradient-to-br from-primary-400 to-secondary-500">
           {project.imageUrl ? (
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-contain max-h-[60vh]"
               loading="lazy"
               decoding="async"
               onError={(e) => {
@@ -43,7 +43,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               }}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
+            <div className="w-full h-64 flex items-center justify-center">
               <div className="text-8xl font-bold text-white opacity-30">
                 {project.title.charAt(0)}
               </div>
