@@ -48,6 +48,7 @@ export const skills: Skill[] = [
   { name: 'Linux', category: 'fundamentals' },
   { name: 'Full Stack Engineering', category: 'fundamentals' },
   { name: 'Web Development', category: 'fundamentals' },
+  { name: 'App Development', category: 'fundamentals' },
 ];
 
 export const categoryLabels: Record<Skill['category'], string> = {
