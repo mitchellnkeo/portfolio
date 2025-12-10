@@ -1,4 +1,6 @@
 import type { Project } from '../types';
+import vendettaRoastingBanner from '../assets/images/VendettaRoastingBanner.png';
+import seattleWayfareBanner from '../assets/images/SeattleWayfareBanner.PNG';
 
 export const projects: Project[] = [
   {
@@ -24,7 +26,7 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://vendetta-roasting.vercel.app/',
     githubUrl: 'https://github.com/mitchellnkeo/VendettaRoasting',
-    imageUrl: '/images/vendetta-roasting.jpg',
+    imageUrl: vendettaRoastingBanner,
     features: [
       'Full-stack e-commerce with Next.js 14 App Router',
       'Sanity CMS integration for content management',
@@ -58,11 +60,10 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://seattle-wayfare.app',
     githubUrl: 'https://github.com/mitchellnkeo/seattlewayfare',
-    imageUrl: '/images/seattle-wayfare.jpg',
+    imageUrl: seattleWayfareBanner,
     features: [
       'Predictive analytics with reliability scoring algorithm',
       '80% reduction in API calls through intelligent caching',
-      'Dual-mode route planning (Fast Mode vs. Safe Mode)',
       'Real-time vehicle tracking with animated map markers',
       'Transfer risk assessment calculator',
       'Proactive delay notifications and alerts',

@@ -98,7 +98,7 @@ function ProjectCard({ project, onImageClick }: ProjectCardProps) {
         <div className="pt-2">
           <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Key Features:</p>
           <ul className="space-y-1">
-            {project.features.slice(0, 3).map((feature, index) => (
+            {project.features.map((feature, index) => (
               <li key={index} className="text-sm text-neutral-600 dark:text-neutral-300 flex items-start gap-2">
                 <ArrowRight className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
                 {feature}
