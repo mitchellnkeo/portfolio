@@ -16,5 +16,18 @@ export const volunteeringExperience: VolunteeringExperience[] = [
       'Coordinated volunteer activities that strengthen cultural preservation and promote equitable access to literature and creative expression in the community.',
     ],
   },
+  {
+    id: '2',
+    organization: 'Community For Youth',
+    position: 'Mentor',
+    startDate: '2025-09',
+    current: true,
+    location: 'Seattle, WA',
+    responsibilities: [
+      'Serve as a dedicated mentor to Seattle high school students, providing guidance, support, and encouragement to help them navigate academic and personal challenges.',
+      'Organize and facilitate community workshop events focused on preparing high school youth for life after graduation, covering topics such as college preparation, career exploration, financial literacy, and life skills development.',
+      'Provide one-on-one mentorship and advice to mentees on setting and achieving life goals, developing personal growth strategies, and building confidence for future success.',
+    ],
+  },
 ];
 
