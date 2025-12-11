@@ -4,34 +4,8 @@ import ProjectCard from '../common/ProjectCard';
 import ProjectModal from '../common/ProjectModal';
 import type { Project } from '../../types';
 
-type FilterType = 'all' | 'fullstack' | 'frontend' | 'backend';
-
 function Projects() {
-  const [filter, setFilter] = useState<FilterType>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  // Categorize projects (simple heuristic based on technologies)
-  const categorizeProject = (project: Project): FilterType => {
-    const techs = project.technologies.join(' ').toLowerCase();
-    const hasFrontend = techs.includes('react') || techs.includes('vue') || techs.includes('angular');
-    const hasBackend = techs.includes('node') || techs.includes('express') || techs.includes('python') || techs.includes('fastapi');
-    
-    if (hasFrontend && hasBackend) return 'fullstack';
-    if (hasFrontend) return 'frontend';
-    if (hasBackend) return 'backend';
-    return 'fullstack'; // default
-  };
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(proj => categorizeProject(proj) === filter);
-
-  const filters: { label: string; value: FilterType }[] = [
-    { label: 'All Projects', value: 'all' },
-    { label: 'Full-Stack', value: 'fullstack' },
-    { label: 'Frontend', value: 'frontend' },
-    { label: 'Backend', value: 'backend' },
-  ];
 
   return (
     <section id="projects" className="py-20 sm:py-24 lg:py-32 bg-white dark:bg-neutral-900 transition-colors duration-200">
@@ -47,30 +21,10 @@ function Projects() {
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="Project category filters">
-          {filters.map((filterOption) => (
-            <button
-              key={filterOption.value}
-              onClick={() => setFilter(filterOption.value)}
-              role="tab"
-              aria-selected={filter === filterOption.value}
-              aria-controls="projects-grid"
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
-                filter === filterOption.value
-                  ? 'bg-primary-600 dark:bg-primary-500 text-white shadow-lg'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 border-2 border-neutral-200 dark:border-neutral-700'
-              }`}
-            >
-              {filterOption.label}
-            </button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
-        {filteredProjects.length > 0 ? (
-          <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="tabpanel">
-            {filteredProjects.map((project) => (
+        {projects.length > 0 ? (
+          <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
               <ProjectCard
                 key={project.id}
                 project={project}
@@ -80,7 +34,7 @@ function Projects() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-neutral-600 dark:text-neutral-400 text-lg">No projects found in this category.</p>
+            <p className="text-neutral-600 dark:text-neutral-400 text-lg">No projects found.</p>
           </div>
         )}
 
