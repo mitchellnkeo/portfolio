@@ -2,6 +2,7 @@ import type { Project } from '../types';
 import vendettaRoastingBanner from '../assets/images/VendettaRoastingBanner.png';
 import seattleWayfareBanner from '../assets/images/SeattleWayfareBanner.PNG';
 import urbanIntellectCover from '../assets/images/UrbanIntellectCover.png';
+import seattleDataPrepCover from '../assets/images/SeattleDataPrep.png';
 
 export const projects: Project[] = [
   {
@@ -11,8 +12,8 @@ export const projects: Project[] = [
     problem: 'A specialty coffee roaster needed a complete e-commerce solution that could handle product management, secure payments, order tracking, and provide an admin dashboard for business operations—all while maintaining excellent performance and user experience.',
     solution: 'Built a comprehensive full-stack e-commerce platform using Next.js 14 with App Router, integrated Sanity CMS for content management, Stripe for secure payments, and PostgreSQL for data storage. Implemented admin analytics dashboard, review system, email notifications, and production-ready security features.',
     technologies: [
-      'Next.js 14',
-      'React 18',
+      'Next.js',
+      'React',
       'TypeScript',
       'Tailwind CSS',
       'PostgreSQL',
@@ -22,7 +23,7 @@ export const projects: Project[] = [
       'Sanity CMS',
       'Resend',
       'Sentry',
-      'Google Analytics 4',
+      'Google Analytics',
       'Recharts',
     ],
     liveUrl: 'https://vendetta-roasting.vercel.app/',
@@ -129,7 +130,7 @@ export const projects: Project[] = [
     problem: 'Urban planning applications need processed, structured data from raw geospatial sources. Raw population density data, NASA Earth observation files, and local datasets require complex processing, clustering, and analysis to generate actionable recommendations for urban planners.',
     solution: 'Built a FastAPI backend service with Python data processing pipeline that converts raw WorldPop data into neighborhood-level features using K-Means clustering. Implemented an AI recommendation engine with weighted composite index scoring, conversational chatbot with NLP and intent classification, and multiple ML models for density prediction, development suitability assessment, and risk analysis.',
     technologies: [
-      'Python 3.11',
+      'Python',
       'FastAPI',
       'Uvicorn',
       'Pydantic',
@@ -149,7 +150,7 @@ export const projects: Project[] = [
     ],
     liveUrl: undefined,
     githubUrl: 'https://github.com/mitchellnkeo/seattle-data-prep',
-    imageUrl: undefined,
+    imageUrl: seattleDataPrepCover,
     features: [
       'K-Means clustering creates 20 neighborhood clusters from population density data',
       'Data processing pipeline converts raw WorldPop data into structured features',
