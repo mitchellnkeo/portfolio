@@ -69,6 +69,33 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             </div>
           </div>
 
+          {/* Photo Gallery */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="mb-6">
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Photo Gallery</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {project.gallery.map((imageUrl, index) => (
+                  <div
+                    key={index}
+                    className="group relative overflow-hidden rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 cursor-pointer"
+                  >
+                    <img
+                      src={imageUrl}
+                      alt={`${project.title} - Gallery image ${index + 1}`}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Technologies */}
           <div className="mb-6">
             <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Technologies Used</h3>
@@ -96,33 +123,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               ))}
             </ul>
           </div>
-
-          {/* Photo Gallery */}
-          {project.gallery && project.gallery.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-semibold text-neutral-900 dark:text-white mb-3">Photo Gallery</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {project.gallery.map((imageUrl, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 cursor-pointer"
-                  >
-                    <img
-                      src={imageUrl}
-                      alt={`${project.title} - Gallery image ${index + 1}`}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                      decoding="async"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t border-neutral-200 dark:border-neutral-700">
