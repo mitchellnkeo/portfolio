@@ -1,6 +1,7 @@
 import type { Project } from '../types';
 import vendettaRoastingBanner from '../assets/images/VendettaRoastingBanner.png';
 import seattleWayfareBanner from '../assets/images/SeattleWayfareBanner.PNG';
+import urbanIntellectCover from '../assets/images/UrbanIntellectCover.png';
 
 export const projects: Project[] = [
   {
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://urban-intellect-wegi.vercel.app/',
     githubUrl: 'https://github.com/mitchellnkeo/UrbanIntellect',
-    imageUrl: undefined,
+    imageUrl: urbanIntellectCover,
     features: [
       'Interactive Leaflet map with Seattle neighborhoods',
       'Multiple data overlay layers (air quality, population density, water quality, transportation, flood risk)',
