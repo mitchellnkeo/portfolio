@@ -10,6 +10,7 @@ export interface Project {
   githubUrl?: string;
   imageUrl?: string;
   features: string[];
+  gallery?: string[];
 }
 
 // Skill types

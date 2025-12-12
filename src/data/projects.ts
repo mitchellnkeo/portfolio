@@ -3,6 +3,9 @@ import vendettaRoastingBanner from '../assets/images/VendettaRoastingBanner.png'
 import seattleWayfareBanner from '../assets/images/SeattleWayfareBanner.PNG';
 import urbanIntellectCover from '../assets/images/UrbanIntellectCover.png';
 import seattleDataPrepCover from '../assets/images/SeattleDataPrep.png';
+import urbanIntellectAI from '../assets/images/UrbanIntellectAI.png';
+import urbanIntellectPOI from '../assets/images/UrbanIntellectPOI.png';
+import urbanIntellectNeighborhoodZoom from '../assets/images/UrbanIntellectNeighborhoodZoom.png';
 
 export const projects: Project[] = [
   {
@@ -121,6 +124,11 @@ export const projects: Project[] = [
       'Python toolkit for processing NASA NetCDF files',
       'Responsive design for desktop and mobile',
       'Loading states and error handling',
+    ],
+    gallery: [
+      urbanIntellectAI,
+      urbanIntellectPOI,
+      urbanIntellectNeighborhoodZoom,
     ],
   },
   {
