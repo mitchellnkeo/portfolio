@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { ExternalLink, Github, ArrowRight, Maximize2 } from 'lucide-react';
 import type { Project } from '../../types';
 import Button from './Button';
+import { getConsolidatedFeatures } from '../../utils/projectUtils';
 
 interface ProjectCardProps {
   project: Project;
@@ -94,14 +95,14 @@ function ProjectCard({ project, onImageClick }: ProjectCardProps) {
           ))}
         </div>
 
-        {/* Key Features */}
+        {/* Key Highlights */}
         <div className="pt-2">
-          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Key Features:</p>
+          <p className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Key Highlights:</p>
           <ul className="space-y-1">
-            {project.features.map((feature, index) => (
+            {getConsolidatedFeatures(project).map((highlight, index) => (
               <li key={index} className="text-sm text-neutral-600 dark:text-neutral-300 flex items-start gap-2">
                 <ArrowRight className="w-4 h-4 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
-                {feature}
+                {highlight}
               </li>
             ))}
           </ul>
