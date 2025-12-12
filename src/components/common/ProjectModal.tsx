@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { X, ExternalLink, Github } from 'lucide-react';
 import type { Project } from '../../types';
 import Button from './Button';
@@ -9,6 +10,8 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
   if (!isOpen || !project) return null;
 
   return (
@@ -77,6 +80,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 {project.gallery.map((imageUrl, index) => (
                   <div
                     key={index}
+                    onClick={() => setExpandedImage(imageUrl)}
                     className="group relative overflow-hidden rounded-lg border-2 border-neutral-200 dark:border-neutral-700 hover:border-primary-500 dark:hover:border-primary-400 transition-all duration-300 cursor-pointer"
                   >
                     <img
@@ -141,6 +145,33 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </div>
         </div>
       </div>
+
+      {/* Expanded Image Viewer */}
+      {expandedImage && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm animate-fade-in"
+          onClick={() => setExpandedImage(null)}
+        >
+          <button
+            onClick={() => setExpandedImage(null)}
+            className="absolute top-4 right-4 z-10 p-2 bg-neutral-800 hover:bg-neutral-700 rounded-full transition-colors"
+            aria-label="Close image viewer"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          <div
+            className="relative max-w-7xl max-h-[95vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={expandedImage}
+              alt={`${project.title} - Expanded view`}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={() => setExpandedImage(null)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
