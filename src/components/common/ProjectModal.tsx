@@ -17,7 +17,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
-      onClick={onClose}
+      onClick={() => {
+        if (!expandedImage) {
+          onClose();
+        }
+      }}
     >
       <div
         className="relative bg-white dark:bg-neutral-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-neutral-200 dark:border-neutral-700 transition-colors duration-200"
@@ -150,10 +154,16 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
       {expandedImage && (
         <div
           className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm animate-fade-in"
-          onClick={() => setExpandedImage(null)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setExpandedImage(null);
+          }}
         >
           <button
-            onClick={() => setExpandedImage(null)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setExpandedImage(null);
+            }}
             className="absolute top-4 right-4 z-10 p-2 bg-neutral-800 hover:bg-neutral-700 rounded-full transition-colors"
             aria-label="Close image viewer"
           >
@@ -166,8 +176,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             <img
               src={expandedImage}
               alt={`${project.title} - Expanded view`}
-              className="max-w-full max-h-full object-contain rounded-lg"
-              onClick={() => setExpandedImage(null)}
+              className="max-w-full max-h-full object-contain rounded-lg cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                setExpandedImage(null);
+              }}
             />
           </div>
         </div>
