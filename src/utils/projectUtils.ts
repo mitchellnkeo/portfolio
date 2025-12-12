@@ -8,20 +8,13 @@ export function getConsolidatedFeatures(project: Project): string[] {
   const features = project.features.join(' ').toLowerCase();
   const bullets: string[] = [];
 
-  // Extract key technical buzzwords and concepts
+  // Extract key technical buzzwords and concepts (for generic fallback)
   const hasFullStack = /full.?stack|full.?stack|backend|frontend|api|server|client/i.test(features);
   const hasDatabase = /database|postgresql|sql|mongodb|supabase|data storage/i.test(features);
-  const hasAuth = /authentication|auth|nextauth|security|oauth|jwt/i.test(features);
-  const hasPayment = /payment|stripe|checkout|e.?commerce|transaction/i.test(features);
   const hasML = /machine learning|ml|ai|predictive|neural|model|clustering|regression/i.test(features);
   const hasRealTime = /real.?time|real.?time|live|websocket|socket|streaming/i.test(features);
-  const hasCloud = /cloud|deployment|vercel|railway|aws|azure|docker|container/i.test(features);
-  const hasTesting = /test|tdd|jest|testing|qa|quality assurance/i.test(features);
   const hasAnalytics = /analytics|monitoring|sentry|tracking|metrics|dashboard/i.test(features);
-  const hasMobile = /mobile|react native|expo|ios|android|native/i.test(features);
-  const hasGeospatial = /geospatial|mapping|leaflet|map|gis|coordinates/i.test(features);
   const hasAPI = /api|rest|graphql|endpoint|microservice/i.test(features);
-  const hasOptimization = /optimization|performance|caching|scalable|scalability/i.test(features);
 
   // Build bullet points based on project type and features
   if (project.id === 'vendetta-roasting') {
