@@ -1,5 +1,13 @@
 import type { Project } from '../types';
 import vendettaRoastingBanner from '../assets/images/VendettaRoastingBanner.png';
+import vendettaRoastingSanity from '../assets/images/VendettaRoastingSanity.png';
+import vendettaRoastingUserAccount from '../assets/images/VendettaRoastingUserAccount.png';
+import vendettaRoastingOrderManagement from '../assets/images/VendettaRoastingOrderManagement.png';
+import vendettaRoastingAnalytics from '../assets/images/VendettaRoastingAnalytics.png';
+import vendettaRoastingAdminDashboard from '../assets/images/VendettaRoastingAdminDashboard.png';
+import vendettaRoastingFAQ from '../assets/images/VendettaRoastingFAQ.png';
+import vendettaRoastingEvents from '../assets/images/VendettaRoastingEvents.png';
+import vendettaRoastingProduct from '../assets/images/VendettaRoastingProduct.png';
 import seattleWayfareBanner from '../assets/images/SeattleWayfareBanner.PNG';
 import urbanIntellectCover from '../assets/images/UrbanIntellectCover.png';
 import seattleDataPrepCover from '../assets/images/SeattleDataPrep.png';
@@ -32,6 +40,16 @@ export const projects: Project[] = [
     liveUrl: 'https://vendetta-roasting.vercel.app/',
     githubUrl: 'https://github.com/mitchellnkeo/VendettaRoasting',
     imageUrl: vendettaRoastingBanner,
+    gallery: [
+      vendettaRoastingSanity,
+      vendettaRoastingUserAccount,
+      vendettaRoastingOrderManagement,
+      vendettaRoastingAnalytics,
+      vendettaRoastingAdminDashboard,
+      vendettaRoastingFAQ,
+      vendettaRoastingEvents,
+      vendettaRoastingProduct,
+    ],
     features: [
       'Full-stack e-commerce with Next.js 14 App Router',
       'Sanity CMS integration for content management',
