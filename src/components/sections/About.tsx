@@ -27,7 +27,7 @@ export default function About() {
                   I'm a Software Engineer based in Seattle with a background in full-stack web development, AI/ML applications, and community leadership. I specialize in building scalable, user-centered applications using TypeScript, React, Tailwind, and Node.js, and I have hands-on experience with REST APIs, PostgreSQL, and cloud deployment pipelines through platforms like Vercel and Render.
                 </p>
                 <p>
-                  Before transitioning into tech, I served as a Communications Manager in the U.S. Army's 1st Special Forces Group, where I led and trained teams in high-pressure environments and earned an Active TS/SCI clearance. That experience sharpened my skills in problem-solving, systems thinking, and collaboration — qualities I now bring to every engineering project.
+                  Before transitioning into tech, I served as a Communications Manager in the U.S. Army's 1st Special Forces Group, where I led and trained teams in high-pressure environments and earned an Active TS/SCI clearance. That experience sharpened my skills in problem-solving, systems thinking, and collaboration. These are qualities I now bring to every engineering project!
                 </p>
                 <p>
                   I'm passionate about using technology to improve accessibility, community engagement, and data-driven decision-making. As the Founder of the Seattle Chinatown Book Club, I lead an 8-person team to organize monthly events that bring together over 80 attendees and partner with local organizations to support cultural and community initiatives.
