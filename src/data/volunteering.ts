@@ -29,5 +29,19 @@ export const volunteeringExperience: VolunteeringExperience[] = [
       'Provide one-on-one mentorship and advice to mentees on setting and achieving life goals, developing personal growth strategies, and building confidence for future success.',
     ],
   },
+  {
+    id: '3',
+    organization: 'Texas 4000 Fighting Cancer',
+    position: 'Rider & Fitness Coordinator',
+    startDate: '2018-12',
+    endDate: '2019-09',
+    current: false,
+    location: 'Austin, TX',
+    responsibilities: [
+      'Raised $5,000+ for cancer research and support services while participating in an 18-month leadership development program designed to cultivate the next generation of leaders in the fight against cancer.',
+      'Completed 2,000+ training miles and engaged in extensive community volunteering, sharing life-saving information about cancer prevention and early detection with communities across the route.',
+      'Played an active role in planning and executing the 4,000+ mile bike ride from Austin to Anchorage, rotating duties including driving support vehicles, setting up rest stops, securing food donations, and preparing meals for the team.',
+    ],
+  },
 ];
 
