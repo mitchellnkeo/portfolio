@@ -33,7 +33,7 @@ export default function Skills() {
           </h2>
           <div className="w-24 h-1 bg-primary-600 dark:bg-primary-400 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
-            A comprehensive overview of the technologies and tools I work with
+            A comprehensive overview of the technologies and tools I work with!
           </p>
         </div>
 
