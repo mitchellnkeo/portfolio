@@ -26,15 +26,6 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
-  // Auto-advance carousel (optional - can be removed if not desired)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
   // Keyboard navigation for carousel
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
