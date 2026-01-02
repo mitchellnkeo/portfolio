@@ -9,17 +9,41 @@ import hermReview from '../../assets/images/Reviews/HermReview.png';
 interface Testimonial {
   image: string;
   name: string;
-  title?: string;
-  relationship?: string;
-  text?: string;
+  relationship: string;
+  keywords: string[];
 }
 
 const reviews: Testimonial[] = [
-  { image: hermReview, name: 'Herm' },
-  { image: chrisReview, name: 'Chris' },
-  { image: timReview, name: 'Tim' },
-  { image: ethanReview, name: 'Ethan' },
-  { image: scottReview, name: 'Scott' },
+  { 
+    image: hermReview, 
+    name: 'Lindsey Herm', 
+    relationship: 'Project Manager',
+    keywords: ['Self-starter', 'High efficiency', 'Fast learner', 'Process oriented', 'Highly skilled', 'Reliable', 'Collaborative']
+  },
+  { 
+    image: chrisReview, 
+    name: 'Christopher Fahlin', 
+    relationship: 'Senior Engineer Coworker',
+    keywords: ['Integral member', 'Hit the ground running', 'TypeScript & React', 'Data-driven insights', 'Solution-oriented', 'Standout engineer', 'Technical excellence']
+  },
+  { 
+    image: timReview, 
+    name: 'Tim Andes', 
+    relationship: 'Hackathon Teammate',
+    keywords: ['Communication skills', 'Effective work dynamic', 'JavaScript/React/TailwindCSS', 'Design & UX', 'Enthusiasm', 'Positive attitude', 'Full Stack Engineer']
+  },
+  { 
+    image: ethanReview, 
+    name: 'Ethan Berkebile', 
+    relationship: 'Cohort Classmate',
+    keywords: ['Contagious positivity', 'Creativity', 'Dedication', 'Full stack development', 'Hunger for learning', 'Curiosity', 'Inspiring']
+  },
+  { 
+    image: scottReview, 
+    name: 'Scott Shannon', 
+    relationship: 'Cohort Classmate',
+    keywords: ['Autonomous environment', 'Complex problems', 'Solution-first mindset', 'Effective communication', 'Personal growth', 'Team player', 'Collaborative spirit']
+  },
 ];
 
 export default function Testimonials() {
@@ -108,11 +132,11 @@ export default function Testimonials() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full flex-shrink-0 flex items-center justify-center p-4 md:p-6"
+                    className="w-full flex-shrink-0 flex flex-col items-center p-4 md:p-6"
                     style={{ minWidth: '100%', maxWidth: '100%' }}
                   >
                     <div
-                      className="group relative w-full h-[70vh] max-h-[600px] flex items-center justify-center bg-white dark:bg-neutral-900 rounded-lg overflow-hidden cursor-pointer"
+                      className="group relative w-full h-[60vh] max-h-[500px] flex items-center justify-center bg-white dark:bg-neutral-900 rounded-lg overflow-hidden cursor-pointer mb-4"
                       onClick={() => handleImageClick(review.image)}
                       role="button"
                       tabIndex={0}
@@ -129,6 +153,30 @@ export default function Testimonials() {
                         alt={`LinkedIn recommendation from ${review.name}`}
                         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
+                    </div>
+                    
+                    {/* Testimonial Info */}
+                    <div className="w-full text-center space-y-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-neutral-900 dark:text-white">
+                          {review.name}
+                        </h3>
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+                          {review.relationship}
+                        </p>
+                      </div>
+                      
+                      {/* Keywords */}
+                      <div className="flex flex-wrap justify-center gap-2 mt-4">
+                        {review.keywords.map((keyword, keywordIndex) => (
+                          <span
+                            key={keywordIndex}
+                            className="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full"
+                          >
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
