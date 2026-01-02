@@ -8,6 +8,7 @@ import LoadingSpinner from './components/common/LoadingSpinner';
 // Lazy load sections for code splitting
 const Hero = lazy(() => import('./components/sections/Hero'));
 const About = lazy(() => import('./components/sections/About'));
+const Testimonials = lazy(() => import('./components/sections/Testimonials'));
 const Skills = lazy(() => import('./components/sections/Skills'));
 const Projects = lazy(() => import('./components/sections/Projects'));
 const Experience = lazy(() => import('./components/sections/Experience'));
@@ -30,6 +31,7 @@ function App() {
           <Suspense fallback={<LoadingSpinner size="lg" />}>
             <Hero />
             <About />
+            <Testimonials />
             <Skills />
             <Projects />
             <Experience />

@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Home, User, Code, Briefcase, GraduationCap, Mail, Menu, X } from 'lucide-react';
+import { Home, User, Code, Briefcase, GraduationCap, Mail, Menu, X, MessageSquare } from 'lucide-react';
 import { navSections } from '../../utils/constants';
 import DarkModeToggle from '../common/DarkModeToggle';
 
 const iconMap: Record<string, typeof Home> = {
   hero: Home,
   about: User,
+  testimonials: MessageSquare,
   skills: Code,
   projects: Briefcase,
   experience: GraduationCap,
