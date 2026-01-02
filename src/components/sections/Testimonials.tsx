@@ -117,10 +117,11 @@ export default function Testimonials() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="min-w-full flex-shrink-0 flex items-center justify-center p-4"
+                    className="w-full flex-shrink-0 flex items-center justify-center p-4 md:p-6"
+                    style={{ minWidth: '100%', maxWidth: '100%' }}
                   >
                     <div
-                      className="group relative w-full h-[600px] flex items-center justify-center bg-white dark:bg-neutral-900 rounded-lg overflow-hidden cursor-pointer"
+                      className="group relative w-full h-[70vh] max-h-[600px] flex items-center justify-center bg-white dark:bg-neutral-900 rounded-lg overflow-hidden cursor-pointer"
                       onClick={() => handleImageClick(review.image)}
                       role="button"
                       tabIndex={0}
@@ -135,7 +136,7 @@ export default function Testimonials() {
                       <img
                         src={review.image}
                         alt={`LinkedIn recommendation from ${review.name}`}
-                        className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>
