@@ -31,9 +31,9 @@ function App() {
           <Suspense fallback={<LoadingSpinner size="lg" />}>
             <Hero />
             <About />
-            <Testimonials />
             <Skills />
             <Projects />
+            <Testimonials />
             <Experience />
             <Contact />
           </Suspense>
