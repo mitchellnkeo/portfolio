@@ -97,19 +97,32 @@ export default function Testimonials() {
           role="dialog"
           aria-modal="true"
           aria-label="Expanded recommendation view"
+          style={{
+            animation: 'fadeIn 0.3s ease-out forwards'
+          }}
         >
           {/* Close Button */}
           <button
             data-close-button
             onClick={handleCloseModal}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50"
             aria-label="Close expanded view"
+            style={{
+              animation: 'fadeIn 0.3s ease-out 0.15s forwards',
+              opacity: 0
+            }}
           >
             <X size={24} />
           </button>
 
           {/* Expanded Image */}
-          <div className="relative max-w-full max-h-full">
+          <div 
+            className="relative max-w-full max-h-full"
+            style={{
+              animation: 'fadeInScale 0.3s ease-out 0.1s forwards',
+              opacity: 0
+            }}
+          >
             <img
               src={expandedImage}
               alt="Expanded LinkedIn recommendation"
