@@ -94,24 +94,6 @@ export default function Testimonials() {
     }
   };
 
-  // Keyboard navigation for carousel
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (expandedImage) return; // Don't handle carousel navigation when modal is open
-      
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        goToPrevious();
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        goToNext();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [expandedImage]);
-
   return (
     <>
       <section id="testimonials" className="py-20 sm:py-24 lg:py-32 bg-neutral-50 dark:bg-neutral-800 transition-colors duration-200">
@@ -127,7 +109,7 @@ export default function Testimonials() {
           {/* Carousel Container */}
           <div className="relative max-w-4xl mx-auto">
             {/* Carousel Wrapper */}
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="relative overflow-hidden rounded-xl bg-white dark:bg-neutral-900 shadow-lg">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -135,10 +117,10 @@ export default function Testimonials() {
                 {reviews.map((review, index) => (
                   <div
                     key={index}
-                    className="min-w-full flex-shrink-0"
+                    className="min-w-full flex-shrink-0 flex items-center justify-center p-4"
                   >
                     <div
-                      className="group relative rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-neutral-900 overflow-hidden cursor-pointer mx-4"
+                      className="group relative w-full h-[600px] flex items-center justify-center bg-white dark:bg-neutral-900 rounded-lg overflow-hidden cursor-pointer"
                       onClick={() => handleImageClick(review.image)}
                       role="button"
                       tabIndex={0}
@@ -153,7 +135,7 @@ export default function Testimonials() {
                       <img
                         src={review.image}
                         alt={`LinkedIn recommendation from ${review.name}`}
-                        className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
+                        className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                   </div>
