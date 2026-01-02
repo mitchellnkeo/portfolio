@@ -26,17 +26,15 @@ export default function Testimonials() {
         </div>
 
         {/* Reviews Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-col items-center gap-8 max-w-4xl mx-auto">
           {reviews.map((review, index) => (
             <ScrollFadeIn key={review.name} delay={index * 100}>
-              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-neutral-900">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img
-                    src={review.image}
-                    alt={`LinkedIn recommendation from ${review.name}`}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+              <div className="group relative rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-neutral-900 overflow-hidden">
+                <img
+                  src={review.image}
+                  alt={`LinkedIn recommendation from ${review.name}`}
+                  className="w-full h-auto max-w-full block"
+                />
               </div>
             </ScrollFadeIn>
           ))}
