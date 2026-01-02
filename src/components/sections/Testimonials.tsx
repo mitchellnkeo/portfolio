@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import scottColemanReview from '../../assets/images/Reviews/ScottColemanReview.png';
 import ethanReview from '../../assets/images/Reviews/EthanReview.png';
 import scottReview from '../../assets/images/Reviews/ScottReview.png';
 import timReview from '../../assets/images/Reviews/TimReview.png';
@@ -14,6 +15,12 @@ interface Testimonial {
 }
 
 const reviews: Testimonial[] = [
+  { 
+    image: scottColemanReview, 
+    name: 'Scott Coleman', 
+    relationship: 'Project Manager',
+    keywords: ['Versatile developer', 'Stays ahead of the curve', 'Fast learner', 'Invaluable member', 'Fine details', 'Fully committed', 'Success-driven']
+  },
   { 
     image: hermReview, 
     name: 'Lindsey Herm', 
