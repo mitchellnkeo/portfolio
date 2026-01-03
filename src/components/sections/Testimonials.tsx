@@ -174,15 +174,20 @@ export default function Testimonials() {
                       </div>
                       
                       {/* Keywords */}
-                      <div className="flex flex-wrap justify-center gap-2 mt-4">
-                        {review.keywords.map((keyword, keywordIndex) => (
-                          <span
-                            key={keywordIndex}
-                            className="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full"
-                          >
-                            {keyword}
-                          </span>
-                        ))}
+                      <div className="mt-4">
+                        <h4 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">
+                          Key Words
+                        </h4>
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {review.keywords.map((keyword, keywordIndex) => (
+                            <span
+                              key={keywordIndex}
+                              className="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full"
+                            >
+                              {keyword}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
