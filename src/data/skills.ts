@@ -9,6 +9,7 @@ export const skills: Skill[] = [
   { name: 'Node.js', category: 'languages' },
   { name: 'Express.js', category: 'languages' },
   { name: 'React.js', category: 'languages' },
+  { name: 'React Native', category: 'languages' },
   { name: 'Tailwind', category: 'languages' },
   { name: 'Python', category: 'languages' },
   
