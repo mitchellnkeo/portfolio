@@ -3,10 +3,27 @@ import type { WorkExperience, Education } from '../types';
 export const workExperience: WorkExperience[] = [
   {
     id: '1',
+    company: 'InterProse',
+    position: 'AI Engineer',
+    startDate: '2026-06',
+    current: true,
+    location: 'Remote',
+    responsibilities: [
+      'Build AI-powered features such as document understanding, summarization, classification, and workflow automation',
+      'Develop AI agents and prompt-driven systems that analyze data, generate structured outputs, and assist users',
+      'Create internal tools that improve productivity, including developer assistants and support automation tools',
+      'Prototype new AI capabilities, evaluate model performance, and iterate on prompt and workflow design',
+      'Integrate AI features into existing systems and applications alongside engineering teams',
+      'Monitor performance, quality, and cost of AI systems and continuously improve outputs through testing and evaluation',
+    ],
+  },
+  {
+    id: '2',
     company: 'Golden Tech',
     position: 'Software Engineer',
     startDate: '2024-03',
-    current: true,
+    endDate: '2026-01',
+    current: false,
     location: 'Tacoma, WA',
     responsibilities: [
       'Develop and maintain responsive web applications using TypeScript, React, and Tailwind CSS, ensuring clean, scalable, and maintainable front-end architecture',
@@ -15,7 +32,7 @@ export const workExperience: WorkExperience[] = [
     ],
   },
   {
-    id: '2',
+    id: '3',
     company: 'U.S. Army, 1st Special Forces Group',
     position: 'Communications Manager',
     startDate: '2020-12',

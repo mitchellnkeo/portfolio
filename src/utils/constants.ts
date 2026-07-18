@@ -42,10 +42,10 @@ export const colors = {
 export const navSections = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'testimonials', label: 'Testimonials' },
-  { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ] as const;
 
