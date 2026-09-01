@@ -14,8 +14,53 @@ import seattleDataPrepCover from '../assets/images/SeattleDataPrep.png';
 import urbanIntellectAI from '../assets/images/UrbanIntellectAI.png';
 import urbanIntellectPOI from '../assets/images/UrbanIntellectPOI.png';
 import urbanIntellectNeighborhoodZoom from '../assets/images/UrbanIntellectNeighborhoodZoom.png';
+import vetEZClaimBanner from '../assets/images/VetEZClaimBanner.png';
+import vetEZClaim01 from '../assets/images/VetEZClaim01.png';
+import vetEZClaim02 from '../assets/images/VetEZClaim02.png';
+import vetEZClaim03 from '../assets/images/VetEZClaim03.png';
+import vetEZClaim04 from '../assets/images/VetEZClaim04.png';
 
 export const projects: Project[] = [
+  {
+    id: 'vetez-claim',
+    title: 'VetEZ Claim',
+    description: 'A production iOS, Android, and web platform that helps veterans complete official VA claim forms, generate fillable PDFs, and e-fax submissions—taken over as sole engineer after the previous vendor left.',
+    problem: 'A nonprofit needed a working store app and web product after losing the original development team. Official VA forms in production were years out of date, Android Play uploads were blocked by a missing upload keystore, iOS and Android releases were stalled, and the product still carried leftover subscription/IAP assumptions instead of a free-app + donate model. The same PDF pipeline had to stay correct across Ionic, Next.js, and a Node API or veterans would generate invalid paperwork.',
+    solution: 'Owned the full mobile release cycle and the shared form stack. Remapped ten official VA revisions through DocSpring AcroForm templates, kept Vue/Ionic, Next.js, and Node mappers in lockstep (including Yes/Off checkbox values and signature encoding), then shipped version 1.7.0 to App Store Connect and Google Play. Recovered Play App Signing with a new upload keystore, restored admin-portal access, and ran a client-approved production account reset so every account going forward sits under the nonprofit EULA.',
+    technologies: [
+      'Ionic',
+      'Capacitor',
+      'Vue',
+      'TypeScript',
+      'Next.js',
+      'React',
+      'Node.js',
+      'Express',
+      'Firebase',
+      'Firestore',
+      'DocSpring',
+      'Xcode',
+      'Android Gradle',
+      'App Store Connect',
+      'Google Play Console',
+      'DigitalOcean',
+    ],
+    liveUrl: 'https://app.vetezclaim.com',
+    imageUrl: vetEZClaimBanner,
+    gallery: [vetEZClaim01, vetEZClaim02, vetEZClaim03, vetEZClaim04],
+    features: [
+      'Sole engineer for a live Ionic + Capacitor iOS/Android app (bundle com.vetezclaim.org / io.ionic.vetez)',
+      'Shipped mobile 1.7.0 to App Store Connect and Google Play (iOS build 2, Android versionCode 22)',
+      'Recovered Android upload signing after the prior vendor left—new keystore, Play App Signing, signed AAB upload',
+      'Production Xcode archives, Organizer upload, store metadata, and review submission for both stores',
+      'Updated 10 official VA forms (2023–2026 revisions) across web, mobile, and API so generated PDFs match current VA headers',
+      'Cross-platform AcroForm mappers: shared Yes/Off checkbox encoding and base64 signature handling for DocSpring',
+      'Production UAT against the live API—forms processed successfully after publish + deploy',
+      'DigitalOcean deploys for the Next.js web app and Node PDF/API service; marketing site on Vercel',
+      'Removed leftover IAP/paywall assumptions and aligned the product with a free app + Zeffy donate model',
+      'Restored admin-portal access and ran a dry-run-then-execute production wipe for pre–July 2026 accounts (staff/client emails excluded)',
+    ],
+  },
   {
     id: 'vendetta-roasting',
     title: 'Vendetta Roasting E-Commerce Platform',

@@ -17,7 +17,11 @@ export function getConsolidatedFeatures(project: Project): string[] {
   const hasAPI = /api|rest|graphql|endpoint|microservice/i.test(features);
 
   // Build bullet points based on project type and features
-  if (project.id === 'vendetta-roasting') {
+  if (project.id === 'vetez-claim') {
+    bullets.push('Production Ionic + Capacitor iOS/Android app shipped to App Store and Google Play');
+    bullets.push('Owned store releases, Android signing recovery, and cross-platform VA form/PDF pipeline');
+    bullets.push('Maintained a live Node/Firebase/DocSpring stack after taking over from a prior vendor');
+  } else if (project.id === 'vendetta-roasting') {
     bullets.push('Full-stack e-commerce platform with Next.js, TypeScript, and PostgreSQL');
     bullets.push('Secure payment processing with Stripe, authentication, and admin analytics dashboard');
     bullets.push('Production-ready with 200+ test cases, error monitoring, and performance optimization');
